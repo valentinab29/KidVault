@@ -1,11 +1,5 @@
-/* ==========================================================================
-   UNIVERSIDAD EL BOSQUE - PROGRAMA DE CREACIÓN DIGITAL
-   LENGUAJES DIGITALES III: ESTILOS DE MAQUETACIÓN HOME (KIDVAULT)
-   ========================================================================== */
+@import url("marca.css");
 
-@import url("pautas_marca.css");
-
-/* 1. BARRA DE NAVEGACIÓN (HEADER) */
 .barra-navegacion {
     display: flex;
     justify-content: space-between;
@@ -34,7 +28,6 @@
     opacity: 1;
 }
 
-/* 2. SECCIÓN PRINCIPAL (HERO) */
 .seccion-principal {
     display: flex;
     align-items: center;
@@ -78,8 +71,6 @@
     font-size: 13px;
     opacity: 0.8;
 }
-
-/* Contenedor e Imagen de tu Render 3D del Personaje (Blender) */
 .imagen-principal {
     flex: 1;
     display: flex;
@@ -88,7 +79,7 @@
 }
 
 .personaje-3d {
-    max-height: 400px;
+    max-height: 600px;
     width: auto;
     object-fit: contain;
     animation: flotar 4s ease-in-out infinite;
@@ -99,25 +90,55 @@
     50% { transform: translateY(-15px); }
 }
 
-/* 3. SECCIÓN RECORRIDO (PASO A PASO) */
 .seccion-recorrido {
-    padding: 80px 5%;
-    text-align: center;
+    padding: 80px 10%;
 }
 
-.seccion-recorrido h2 { font-size: 36px; margin-bottom: 5px; }
-.seccion-recorrido h3 { font-size: 20px; font-weight: 400; color: #A4D4FF; margin-bottom: 20px;}
-.descripcion-seccion { max-width: 600px; margin: 0 auto 30px auto; opacity: 0.8; }
+.encabezado-recorrido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto 30px auto;
+}
 
-/* Contenedor e Imagen de tu Render 3D de la Tabla Checklist (Blender) */
+.texto-recorrido {
+    flex: 1;
+    text-align: left; 
+}
+
+.seccion-recorrido h2 { 
+    font-size: 42px; 
+    font-weight: 900;
+    margin-bottom: 5px; 
+}
+
+.seccion-recorrido h3 { 
+    font-size: 22px; 
+    font-weight: 400; 
+    color: #A4D4FF; 
+    margin-bottom: 20px;
+}
+
+.descripcion-seccion { 
+    max-width: 550px; 
+    opacity: 0.9; 
+    line-height: 1.6;
+    font-size: 16px;
+}
 .imagen-tabla-3d {
-    margin-bottom: 40px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tabla-render {
-    max-height: 180px;
+    max-height: 280px; 
     width: auto;
     object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(255,255,255,0.2));
 }
 
 .contenedor-pasos {
@@ -125,7 +146,7 @@
     justify-content: center;
     align-items: center;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 40px auto 0 auto;
     padding: 20px 0;
 }
 
@@ -158,7 +179,6 @@
 .tarjeta-paso h4 { font-size: 22px; margin-bottom: 15px; }
 .tarjeta-paso p { font-size: 14px; opacity: 0.9; line-height: 1.4; }
 
-/* 4. SECCIÓN TESTIMONIOS */
 .seccion-testimonios {
     padding: 80px 5%;
 }
@@ -198,25 +218,25 @@
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 25px;
-    padding: 40px 30px 30px 30px;
+    padding: 50px 30px 30px 30px;
     position: relative;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(5px);
 }
 
 .etiqueta-cliente {
     position: absolute;
     top: -15px;
     left: 30px;
-    background: #0056B3;
+    background: #3a536e;
     padding: 6px 16px;
     border-radius: 15px;
-    font-size: 12px;
+    font-size:15px;
     font-weight: bold;
 }
 
 .imagen-usuario {
     width: 100%;
-    height: 180px;
+    height: 250px;
     border-radius: 15px;
     margin-bottom: 20px;
     object-fit: cover;
@@ -226,7 +246,6 @@
 .tarjeta-testimonio p { font-size: 14px; opacity: 0.85; line-height: 1.6; font-style: italic; }
 .boton-centrado { text-align: center; margin-top: 40px; }
 
-/* 5. SECCIÓN CONTACTO */
 .seccion-contacto {
     padding: 100px 10%;
 }
@@ -239,7 +258,6 @@
     margin: 0 auto;
 }
 
-/* Contenedor e Imagen de tu Render 3D del Celular (Blender) */
 .maqueta-celular-3d {
     flex: 1;
     display: flex;
@@ -273,7 +291,6 @@
     margin-bottom: 15px;
 }
 
-/* 6. PIE DE PÁGINA (FOOTER) */
 .pie-pagina {
     background: #07162c;
     padding: 60px 5% 40px 5%;
@@ -309,9 +326,6 @@
     font-size: 18px;
 }
 
-/* ==========================================================================
-   7. DISEÑO RESPONSIVE (MEDIA QUERIES SEMÁNTICOS)
-   ========================================================================== */
 @media (max-width: 968px) {
     .seccion-principal { flex-direction: column; text-align: center; padding-top: 40px; }
     .contenido-principal h1 { font-size: 50px; }

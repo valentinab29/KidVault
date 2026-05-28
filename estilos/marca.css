@@ -1,9 +1,3 @@
-/* ==========================================================================
-   UNIVERSIDAD EL BOSQUE - PROGRAMA DE CREACIÓN DIGITAL
-   LENGUAJES DIGITALES III: PAUTAS DE MARCA CORPORATIVA (KIDVAULT)
-   ========================================================================== */
-
-/* Configuración General y Reset */
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +16,6 @@ a {
     color: inherit;
 }
 
-/* Componentes de Identidad: Botones Reutilizables */
 .boton-primario {
     background: #0084FF;
     color: #ffffff;
