@@ -1,18 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    const tarjetas = document.querySelectorAll(".recorrido .step-card");
+    // 1. Buscamos todas las tarjetas usando la nueva clase en español
+    const tarjetas = document.querySelectorAll(".seccion-recorrido .tarjeta-paso");
 
     tarjetas.forEach(tarjeta => {
         tarjeta.addEventListener("click", () => {
             
-            const tarjetaActiva = document.querySelector(".recorrido .step-card.active");
+            // 2. Buscamos cuál es la tarjeta que tiene la clase activa en este momento
+            const tarjetaActiva = document.querySelector(".seccion-recorrido .tarjeta-paso.activa");
             
-            
+            // 3. Si encontramos una tarjeta activa, le removemos la clase para apagar el azul
             if (tarjetaActiva) {
-                tarjetaActiva.classList.remove("active");
+                tarjetaActiva.classList.remove("activa");
             }
             
-            tarjeta.classList.add("active");
+            // 4. Le ponemos la clase activa a la tarjeta que el usuario acaba de presionar
+            tarjeta.classList.add("activa");
         });
     });
 });

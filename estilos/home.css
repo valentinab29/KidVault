@@ -1,77 +1,41 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* ==========================================================================
+   UNIVERSIDAD EL BOSQUE - PROGRAMA DE CREACIÓN DIGITAL
+   LENGUAJES DIGITALES III: ESTILOS DE MAQUETACIÓN HOME (KIDVAULT)
+   ========================================================================== */
 
-body {
-    background: linear-gradient(180deg, #092552 0%, #16437E 35%, #2974B7 70%, #0F2D59 100%);
-    color: #ffffff;
-    overflow-x: hidden;
-}
+@import url("pautas_marca.css");
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.btn-primary {
-    background: #0084FF;
-    color: white;
-    padding: 12px 30px;
-    border-radius: 25px;
-    font-weight: bold;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(0, 132, 255, 0.4);
-    transition: transform 0.2s;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-}
-
-.btn-primary-outline {
-    border: 2px solid #ffffff;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-}
-
-.btn-white {
-    background: #ffffff;
-    color: #0F2D59;
-    padding: 12px 35px;
-    border-radius: 25px;
-    font-weight: bold;
-    display: inline-block;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-.navbar {
+/* 1. BARRA DE NAVEGACIÓN (HEADER) */
+.barra-navegacion {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
 }
 .logo img {
-    height: 35px;        
-    width: auto;
-    margin-top: 5px;
+    height: 50px;        
+    width: 200px;
+    object-fit: contain;
 }
-.logo {
-    display: flex;         
-    align-items: center;   
-    font-weight: bold;
-    font-size: 22px;
-}
-.logo span { font-weight: 300; }
 
-.nav-buttons {
+.botones-navegacion {
     display: flex;
     align-items: center;
     gap: 20px;
 }
-.hero {
+
+.enlace-texto {
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.enlace-texto:hover {
+    opacity: 1;
+}
+
+/* 2. SECCIÓN PRINCIPAL (HERO) */
+.seccion-principal {
     display: flex;
     align-items: center;
     min-height: 80vh;
@@ -79,84 +43,93 @@ a {
     position: relative;
 }
 
-.hero-content {
+.contenido-principal {
     flex: 1;
     max-width: 600px;
 }
 
-.hero-content h1 {
+.contenido-principal h1 {
     font-size: 70px;
     font-weight: 900;
     letter-spacing: 2px;
     line-height: 1;
 }
 
-.hero-content h2 {
+.contenido-principal h2 {
     font-size: 24px;
     font-weight: 400;
     margin: 15px 0;
 }
-.hero-content h2 span { color: #5CC2F2; font-weight: bold;}
 
-.hero-content p {
+.contenido-principal h2 span { 
+    color: #5CC2F2; 
+    font-weight: bold;
+}
+
+.contenido-principal p {
     font-size: 16px;
     opacity: 0.9;
     margin-bottom: 30px;
     line-height: 1.5;
 }
 
-.scroll-down {
+.desplazar-abajo {
     margin-top: 50px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
     font-size: 13px;
+    opacity: 0.8;
 }
 
-.mouse-icon {
-    width: 20px;
-    height: 30px;
-    border: 2px solid white;
-    border-radius: 10px;
-}
-
-.hero-image {
+/* Contenedor e Imagen de tu Render 3D del Personaje (Blender) */
+.imagen-principal {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.star-character {
-    font-size: 180px;
-    color: #E2F3FF;
-    filter: drop-shadow(0 0 40px rgba(255,255,255,0.6));
-    animation: float 4s ease-in-out infinite;
+
+.personaje-3d {
+    max-height: 400px;
+    width: auto;
+    object-fit: contain;
+    animation: flotar 4s ease-in-out infinite;
 }
 
-@keyframes float {
+@keyframes flotar {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
 }
-.recorrido {
+
+/* 3. SECCIÓN RECORRIDO (PASO A PASO) */
+.seccion-recorrido {
     padding: 80px 5%;
     text-align: center;
 }
 
-.recorrido h2 { font-size: 36px; margin-bottom: 5px; }
-.recorrido h3 { font-size: 20px; font-weight: 400; color: #A4D4FF; margin-bottom: 20px;}
-.section-desc { max-width: 600px; margin: 0 auto 50px auto; opacity: 0.8; }
+.seccion-recorrido h2 { font-size: 36px; margin-bottom: 5px; }
+.seccion-recorrido h3 { font-size: 20px; font-weight: 400; color: #A4D4FF; margin-bottom: 20px;}
+.descripcion-seccion { max-width: 600px; margin: 0 auto 30px auto; opacity: 0.8; }
 
-.steps-container {
+/* Contenedor e Imagen de tu Render 3D de la Tabla Checklist (Blender) */
+.imagen-tabla-3d {
+    margin-bottom: 40px;
+}
+
+.tabla-render {
+    max-height: 180px;
+    width: auto;
+    object-fit: contain;
+}
+
+.contenedor-pasos {
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 1100px;
     margin: 0 auto;
-    overflow-x: auto;
     padding: 20px 0;
 }
 
-.step-card {
+.tarjeta-paso {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -170,10 +143,10 @@ a {
     cursor: pointer; 
     position: relative;
     z-index: 1;
-    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.step-card.active {
+.tarjeta-paso.activa {
     background: #0084FF;
     transform: scale(1.05);
     z-index: 5; 
@@ -182,20 +155,21 @@ a {
     box-shadow: 0 15px 35px rgba(0, 132, 255, 0.4);
 }
 
-.step-card h4 { font-size: 22px; margin-bottom: 15px; }
-.step-card p { font-size: 14px; opacity: 0.9; line-height: 1.4; }
+.tarjeta-paso h4 { font-size: 22px; margin-bottom: 15px; }
+.tarjeta-paso p { font-size: 14px; opacity: 0.9; line-height: 1.4; }
 
-.testimonios {
+/* 4. SECCIÓN TESTIMONIOS */
+.seccion-testimonios {
     padding: 80px 5%;
 }
 
-.testimonios h2 {
+.seccion-testimonios h2 {
     text-align: center;
     font-size: 42px;
     margin-bottom: 40px;
 }
 
-.carousel-container {
+.contenedor-carrusel {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,7 +178,7 @@ a {
     margin: 0 auto;
 }
 
-.arrow-btn {
+.boton-flecha {
     background: none;
     border: none;
     color: white;
@@ -213,14 +187,14 @@ a {
     opacity: 0.7;
 }
 
-.testimonials-grid {
+.rejilla-testimonios {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     width: 100%;
 }
 
-.testimonial-card {
+.tarjeta-testimonio {
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 25px;
@@ -229,7 +203,7 @@ a {
     backdrop-filter: blur(8px);
 }
 
-.badge {
+.etiqueta-cliente {
     position: absolute;
     top: -15px;
     left: 30px;
@@ -240,30 +214,24 @@ a {
     font-weight: bold;
 }
 
-.user-img {
+.imagen-usuario {
     width: 100%;
     height: 180px;
-    background-color: #555;
     border-radius: 15px;
     margin-bottom: 20px;
-    background-position: center;
-    background-size: cover;
+    object-fit: cover;
 }
 
-.placeholder-img {
-    background: linear-gradient(45deg, #1e3c72, #2a5298);
-}
+.tarjeta-testimonio h4 { font-size: 20px; margin-bottom: 10px; }
+.tarjeta-testimonio p { font-size: 14px; opacity: 0.85; line-height: 1.6; font-style: italic; }
+.boton-centrado { text-align: center; margin-top: 40px; }
 
-.testimonial-card h4 { font-size: 20px; margin-bottom: 10px; }
-.testimonial-card p { font-size: 14px; opacity: 0.85; line-height: 1.6; font-style: italic; }
-
-.center-btn { text-align: center; margin-top: 40px; }
-
-.contacto {
+/* 5. SECCIÓN CONTACTO */
+.seccion-contacto {
     padding: 100px 10%;
 }
 
-.contacto-container {
+.contenedor-contacto {
     display: flex;
     align-items: center;
     gap: 50px;
@@ -271,40 +239,49 @@ a {
     margin: 0 auto;
 }
 
-.contacto-mockup {
+/* Contenedor e Imagen de tu Render 3D del Celular (Blender) */
+.maqueta-celular-3d {
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
-.contacto-info {
+.celular-3d {
+    max-height: 380px;
+    width: auto;
+    object-fit: contain;
+}
+
+.informacion-contacto {
     flex: 1;
 }
 
-.curved-title {
+.titulo-curvo {
     font-size: 46px;
     margin-bottom: 20px;
 }
 
-.contacto-info p {
+.informacion-contacto p {
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 30px;
     opacity: 0.9;
 }
 
-.channels p {
+.canales-comunicacion p {
     font-size: 18px;
     margin-bottom: 15px;
 }
-.footer {
+
+/* 6. PIE DE PÁGINA (FOOTER) */
+.pie-pagina {
     background: #07162c;
     padding: 60px 5% 40px 5%;
     font-size: 14px;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-.footer-top {
+.contenido-pie {
     display: grid;
     grid-template-columns: 1.5fr repeat(3, 1fr);
     gap: 40px;
@@ -312,35 +289,36 @@ a {
     margin: 0 auto;
 }
 
-.footer-links h4 {
+.enlaces-pie h4 {
     margin-bottom: 20px;
     color: white;
     font-size: 16px;
 }
 
-.footer-links a, .footer-links p {
+.enlaces-pie a, .enlaces-pie p {
     display: block;
     margin-bottom: 12px;
     opacity: 0.7;
 }
 
-.footer-links a:hover { opacity: 1; }
+.enlaces-pie a:hover { opacity: 1; }
 
-.social-icons {
+.iconos-sociales {
     display: flex;
     gap: 15px;
     font-size: 18px;
 }
 
-
+/* ==========================================================================
+   7. DISEÑO RESPONSIVE (MEDIA QUERIES SEMÁNTICOS)
+   ========================================================================== */
 @media (max-width: 968px) {
-    .hero { flex-direction: column; text-align: center; padding-top: 40px; }
-    .hero-content h1 { font-size: 50px; }
-    .scroll-down { justify-content: center; }
-    .steps-container { flex-direction: column; gap: 20px; }
-    .step-card { margin-left: 0; width: 100%; max-width: 400px; }
-    .step-card.active { margin-right: 0; }
-    .testimonials-grid { grid-template-columns: 1fr; }
-    .contacto-container { flex-direction: column; text-align: center; }
-    .footer-top { grid-template-columns: 1fr; gap: 30px; }
+    .seccion-principal { flex-direction: column; text-align: center; padding-top: 40px; }
+    .contenido-principal h1 { font-size: 50px; }
+    .contenedor-pasos { flex-direction: column; gap: 20px; }
+    .tarjeta-paso { margin-left: 0; width: 100%; max-width: 400px; }
+    .tarjeta-paso.activa { margin-right: 0; }
+    .rejilla-testimonios { grid-template-columns: 1fr; }
+    .contenedor-contacto { flex-direction: column; text-align: center; }
+    .contenido-pie { grid-template-columns: 1fr; gap: 30px; }
 }
