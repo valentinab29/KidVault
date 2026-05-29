@@ -415,7 +415,7 @@
     max-height: 150px;
     width: auto;
     object-fit: contain;
-    animation: flotarSuave 3s ease-in-out infinite; /* Movimiento fluido 3D */
+    animation: flotarSuave 3s ease-in-out infinite; 
 }
 
 .contenedor-render-libreta {
@@ -428,7 +428,7 @@
     max-height: 150px;
     width: auto;
     object-fit: contain;
-    animation: flotarSuave 3s ease-in-out infinite; /* Movimiento fluido 3D */
+    animation: flotarSuave 3s ease-in-out infinite; 
 }
 
 .barra-progreso-contenedor {
@@ -445,7 +445,7 @@
     height: 100%;
     background: var(--celeste-kidvault);
     border-radius: 2px;
-    animation: cargarProgresoPagina 5s linear forwards; /* Se ejecuta inmediatamente al cargar */
+    animation: cargarProgresoPagina 5s linear forwards; 
 }
 
 .texto-informativo-carga {
