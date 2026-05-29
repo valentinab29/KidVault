@@ -1,4 +1,3 @@
-// Variables globales básicas para los datos del formulario
 let nombre = "";
 let correo = "";
 let celular = "";
@@ -8,7 +7,6 @@ let producto = "";
 let observaciones = "";
 
 function enviarFormulario() {
-    // 1. Capturar los valores directamente de la interfaz
     nombre = document.getElementById("nombre").value;
     correo = document.getElementById("correo").value;
     celular = document.getElementById("celular").value;
@@ -17,7 +15,7 @@ function enviarFormulario() {
     producto = document.getElementById("producto").value;
     observaciones = document.getElementById("sugerencias").value;
 
-    // 2. Validar campos obligatorios (Caso base: Campo Vacío)
+    
     if (nombre == "") {
         alert("Por favor, ingrese su nombre completo.");
         return;
@@ -43,6 +41,5 @@ function enviarFormulario() {
         return;
     }
 
-    // 3. Respuesta exitosa si todo está lleno
     alert("¡Registro Exitoso!\n\nMuchas gracias " + nombre + ", tu solicitud de asesoría para el beneficio de '" + producto + "' ha sido enviada.");
 }
