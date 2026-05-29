@@ -151,29 +151,24 @@
 }
 
 .tarjeta-paso {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(49, 98, 206, 0.507);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 30px;
-    border-radius: 20px;
-    width: 260px;
-    min-height: 200px;
+    border-radius: 25px;
+    width: 600px;
+    min-height: 180px;
     text-align: left;
     margin-left: -20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     cursor: pointer; 
     position: relative;
     z-index: 1;
-    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tarjeta-paso.activa {
-    background: #0084FF;
-    transform: scale(1.05);
-    z-index: 5; 
-    margin-left: -20px; 
-    margin-right: -10px;
-    box-shadow: 0 15px 35px rgba(0, 132, 255, 0.4);
+.tarjeta-paso:hover {
+  transform: scale(1.05);
+  background: #5ca9f2;
 }
 
 .tarjeta-paso h4 { font-size: 22px; margin-bottom: 15px; }
@@ -315,7 +310,7 @@
 .enlaces-pie a, .enlaces-pie p {
     display: block;
     margin-bottom: 12px;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .enlaces-pie a:hover { opacity: 1; }
@@ -324,6 +319,7 @@
     display: flex;
     gap: 15px;
     font-size: 18px;
+    background: none;
 }
 
 @media (max-width: 968px) {
@@ -339,21 +335,23 @@
 
 
 
-/* ==========================================================================
-   ESTILOS PARA LA PÁGINA INDEPENDIENTE DE CARGA (PROCESANDO.HTML)
-   ========================================================================== */
+
+
+
+
+
 :root {
-    --azul-oscuro-fondo: #0a2540; /* Color principal de tu marca */
+    --azul-oscuro-fondo: #0a2540; 
     --celeste-kidvault: #5cc2f2;
 }
 
-/* Forzamos que el body de esta página ocupe todo el espacio y tenga tu fondo */
+
 .body-pantalla-carga {
     margin: 0;
     padding: 0;
     background-color: var(--azul-oscuro-fondo);
     min-height: 100vh;
-    font-family: Arial, sans-serif; /* O la tipografía que cargues de Google Fonts */
+    font-family: Arial, sans-serif; 
     overflow-x: hidden;
 }
 
@@ -368,7 +366,7 @@
     box-sizing: border-box;
 }
 
-/* Contenedor central con efecto vidrio esmerilado (Glassmorphism) */
+
 .contenedor-carga-cristal {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -385,7 +383,7 @@
     z-index: 5;
 }
 
-/* Encabezado interno de la tarjeta */
+
 .encabezado-carga {
     display: flex;
     justify-content: space-between;
@@ -394,17 +392,11 @@
 }
 
 .logo-carga img {
-    height: 35px; /* Ajusta según el tamaño de tu logo */
+    height: 35px; 
     width: auto;
 }
 
-.icono-regresar-carga {
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: bold;
-    font-size: 18px;
-}
 
-/* Contenido Principal */
 .contenido-carga h2 {
     font-size: 36px;
     font-weight: 800;
@@ -420,13 +412,25 @@
 }
 
 .render-libros {
-    max-height: 160px;
+    max-height: 150px;
     width: auto;
     object-fit: contain;
     animation: flotarSuave 3s ease-in-out infinite; /* Movimiento fluido 3D */
 }
 
-/* Barra de progreso de 5 segundos */
+.contenedor-render-libreta {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.render-libreta {
+    max-height: 150px;
+    width: auto;
+    object-fit: contain;
+    animation: flotarSuave 3s ease-in-out infinite; /* Movimiento fluido 3D */
+}
+
 .barra-progreso-contenedor {
     width: 140px;
     height: 4px;
@@ -452,7 +456,7 @@
     opacity: 0.85;
 }
 
-/* Pie de página de la tarjeta */
+
 .pie-carga {
     margin-top: 35px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -467,18 +471,18 @@
     font-weight: 600;
 }
 
-/* Ilustración del personaje adaptada a la esquina inferior izquierda */
+
 .personaje-flotante-carga {
     position: absolute;
     bottom: 0;
     left: 4%;
-    max-height: 220px;
+    max-height: 350px;
     width: auto;
     z-index: 10;
     pointer-events: none;
 }
 
-/* --- ANIMACIONES NATIVAS (CSS3) --- */
+
 @keyframes flotarSuave {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
@@ -488,7 +492,7 @@
     to { width: 100%; }
 }
 
-/* Responsive Obligatorio de la Rúbrica (< 480px) */
+
 @media (max-width: 480px) {
     .contenedor-carga-cristal {
         padding: 25px;
@@ -498,6 +502,6 @@
         font-size: 26px;
     }
     .personaje-flotante-carga {
-        display: none; /* Se oculta para no pisar el contenido en pantallas muy pequeñas */
+        display: none; 
     }
 }
