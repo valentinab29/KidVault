@@ -336,3 +336,168 @@
     .contenedor-contacto { flex-direction: column; text-align: center; }
     .contenido-pie { grid-template-columns: 1fr; gap: 30px; }
 }
+
+
+
+/* ==========================================================================
+   ESTILOS PARA LA PÁGINA INDEPENDIENTE DE CARGA (PROCESANDO.HTML)
+   ========================================================================== */
+:root {
+    --azul-oscuro-fondo: #0a2540; /* Color principal de tu marca */
+    --celeste-kidvault: #5cc2f2;
+}
+
+/* Forzamos que el body de esta página ocupe todo el espacio y tenga tu fondo */
+.body-pantalla-carga {
+    margin: 0;
+    padding: 0;
+    background-color: var(--azul-oscuro-fondo);
+    min-height: 100vh;
+    font-family: Arial, sans-serif; /* O la tipografía que cargues de Google Fonts */
+    overflow-x: hidden;
+}
+
+.pantalla-carga-pagina {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Contenedor central con efecto vidrio esmerilado (Glassmorphism) */
+.contenedor-carga-cristal {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 40px;
+    width: 100%;
+    max-width: 720px;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    z-index: 5;
+}
+
+/* Encabezado interno de la tarjeta */
+.encabezado-carga {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logo-carga img {
+    height: 35px; /* Ajusta según el tamaño de tu logo */
+    width: auto;
+}
+
+.icono-regresar-carga {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Contenido Principal */
+.contenido-carga h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 25px;
+    letter-spacing: -0.5px;
+}
+
+.contenedor-render-libros {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.render-libros {
+    max-height: 160px;
+    width: auto;
+    object-fit: contain;
+    animation: flotarSuave 3s ease-in-out infinite; /* Movimiento fluido 3D */
+}
+
+/* Barra de progreso de 5 segundos */
+.barra-progreso-contenedor {
+    width: 140px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin: 15px auto 0 auto;
+    overflow: hidden;
+}
+
+.progreso-linea {
+    width: 0%;
+    height: 100%;
+    background: var(--celeste-kidvault);
+    border-radius: 2px;
+    animation: cargarProgresoPagina 5s linear forwards; /* Se ejecuta inmediatamente al cargar */
+}
+
+.texto-informativo-carga {
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 420px;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+/* Pie de página de la tarjeta */
+.pie-carga {
+    margin-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.canales-contacto a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Ilustración del personaje adaptada a la esquina inferior izquierda */
+.personaje-flotante-carga {
+    position: absolute;
+    bottom: 0;
+    left: 4%;
+    max-height: 220px;
+    width: auto;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* --- ANIMACIONES NATIVAS (CSS3) --- */
+@keyframes flotarSuave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes cargarProgresoPagina {
+    to { width: 100%; }
+}
+
+/* Responsive Obligatorio de la Rúbrica (< 480px) */
+@media (max-width: 480px) {
+    .contenedor-carga-cristal {
+        padding: 25px;
+        border-radius: 25px;
+    }
+    .contenido-carga h2 {
+        font-size: 26px;
+    }
+    .personaje-flotante-carga {
+        display: none; /* Se oculta para no pisar el contenido en pantallas muy pequeñas */
+    }
+}
