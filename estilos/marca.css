@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(180deg, #092552 0%, #16437E 35%, #2974B7 70%, #0F2D59 100%);
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.boton-primario {
+    background: #0084FF;
+    color: #ffffff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 132, 255, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boton-primario:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 132, 255, 0.6);
+}
+
+.boton-primario-lineas {
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.boton-primario-lineas:hover {
+    background: #ffffff;
+    color: #092552;
+}
+
+.boton-blanco {
+    background: #ffffff;
+    color: #0F2D59;
+    padding: 12px 35px;
+    border-radius: 25px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.boton-blanco:hover {
+    transform: translateY(-2px);
+}
