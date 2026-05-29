@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - KidVault</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="split-container">
+        <div class="form-visual">
+            <div class="brand">
+                <span class="brand-check">✓</span> GlobalSeguros
+            </div>
+            <div class="visual-content">
+                <h1>Estamos contigo en este gran paso</h1>
+            </div>
+        </div>
+
+        <div class="form-content">
+            <h2>Contáctanos</h2>
+            <p class="instruction">Completa la siguiente información para recibir asesoría personalizada y conocer más sobre nuestras soluciones educativas.</p>
+            
+            <form>
+                <div class="campo">
+                    <input type="text" id="nombre" placeholder="Nombres y Apellidos">
+                </div>
+
+                <div class="campo">
+                    <input type="email" id="correo" placeholder="Correo Electrónico">
+                </div>
+
+                <div class="campo">
+                    <input type="text" id="celular" placeholder="Número de Celular">
+                </div>
+
+                <div class="campo">
+                    <input type="text" id="cedula" placeholder="Cédula">
+                </div>
+
+                <div class="campo">
+                    <select id="ciudad">
+                        <option value="">Selecciona tu ciudad</option>
+                        <option value="Bogotá">Bogotá</option>
+                        <option value="Medellín">Medellín</option>
+                        <option value="Cali">Cali</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <select id="consulta">
+                        <option value="">Tipo de consulta</option>
+                        <option value="Información">Información General</option>
+                        <option value="Soporte">Soporte Técnico</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <select id="producto">
+                        <option value="">Producto</option>
+                        <option value="Seguro Educativo">Seguro Educativo Global</option>
+                        <option value="Otro Plan">Otro Plan</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <select id="origen">
+                        <option value="">¿Cómo se enteró del producto?</option>
+                        <option value="Redes Sociales">Redes Sociales</option>
+                        <option value="Recomendación">Recomendación</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <textarea id="sugerencias" placeholder="Sugerencias y observaciones" rows="4"></textarea>
+                </div>
+
+                <input type="button" value="Enviar" class="btn-submit" onclick="enviarFormulario()">
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
