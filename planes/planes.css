@@ -60,11 +60,6 @@
 .tarjeta-naranja { background-color: #f18860; color: white; }
 .tarjeta-verde { background-color: #19cc95; color: white; }
 
-.numero {
-    font-size: 70px;
-    font-weight: bold;
-    opacity: 0.9;
-}
 
 .titulo-plan {
     font-size: 16px;
