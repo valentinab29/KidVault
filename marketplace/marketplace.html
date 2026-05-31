@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Pago - KidVault</title>
+    <link rel="stylesheet" href="marketplace.css">
+</head>
+<body>
+
+    <div class="split-container-payment">
+        <div class="main-payment-card">
+            
+            <div class="payment-left-side">
+                <div class="payment-header">
+                    <h2><span class="icon-wallet">💳</span> Método de pago</h2>
+                    <h3>Continuemos construyendo su futuro.</h3>
+                    <p class="subtitle">Selecciona o actualiza el método con el que deseas continuar tus aportes.</p>
+                </div>
+
+                <div class="payment-methods-tabs">
+                    
+                    <div class="method-tab-wrapper">
+                        <input type="radio" id="pse" name="metodo_pago" value="pse" checked>
+                        <label for="pse" class="method-tab-label">
+                            <img src="multimedia_mp/logo pse.png" alt="PSE" class="brand-tab-img logo-pse">
+                        </label>
+                    </div>
+                    
+                    <div class="method-tab-wrapper">
+                        <input type="radio" id="visa" name="metodo_pago" value="visa">
+                        <label for="visa" class="method-tab-label">
+                            <img src="multimedia_mp/logo visa.png" alt="Visa" class="brand-tab-img">
+                        </label>
+                    </div>
+                    
+                    <div class="method-tab-wrapper">
+                        <input type="radio" id="mastercard" name="metodo_pago" value="mastercard">
+                        <label for="mastercard" class="method-tab-label">
+                            <img src="multimedia_mp/logo mastercard.png" alt="Mastercard" class="brand-tab-img">
+                        </label>
+                    </div>
+                    
+                    <div class="method-tab-wrapper">
+                        <input type="radio" id="debito" name="metodo_pago" value="debito">
+                        <label for="debito" class="method-tab-label">
+                            <span class="tab-text-fallback">DÉBITO AUTO</span>
+                        </label>
+                    </div>
+
+                </div>
+                
+                <form id="marketplaceForm">
+                    <p class="section-hint">Escribe tus datos personales aqui.</p>
+
+                    <div class="campo">
+                        <select id="billetera-digital">
+                            <option value="">Selecciona una billetera digital.</option>
+                            <option value="nequi">Nequi</option>
+                            <option value="daviplata">Daviplata</option>
+                            <option value="movii">Movii</option>
+                            <option value="tpaga">Tpaga</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <select id="banco">
+                            <option value="">Selecciona una entidad bancaria.</option>
+                            <option value="bancolombia">Bancolombia</option>
+                            <option value="bogota">Banco de Bogotá</option>
+                            <option value="davivienda">Davivienda</option>
+                            <option value="bbva">BBVA</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <input type="text" id="titular" placeholder="Nombre del titular" required>
+                    </div>
+
+                    <div class="campo">
+                        <input type="text" id="n-tarjeta" placeholder="Número de tarjeta" maxlength="16" required>
+                    </div>
+
+                    <div class="row-inputs">
+                        <div class="campo half">
+                            <input type="text" id="cvv" placeholder="CVV (Ej: 327)" maxlength="3" required>
+                        </div>
+                        <div class="campo row-date half">
+                            <input type="text" id="exp-mm" placeholder="DD" maxlength="2" class="date-input" required>
+                            <span class="date-separator">/</span>
+                            <input type="text" id="exp-aa" placeholder="MM" maxlength="2" class="date-input" required>
+                        </div>
+                    </div>
+
+                    <div class="document-upload-section">
+                        <h4>Documentación Requerida</h4>
+                        <div class="file-drop-zone">
+                            <label for="documento" class="file-label-wrapper">
+                                <span class="folder-icon">📂</span>
+                                <span class="label-text">Seleccionar documento (PDF, PNG, JPG)</span>
+                            </label>
+                            <input type="file" id="documento" accept=".pdf, .png, .jpg, .jpeg" required>
+                        </div>
+                        <p id="file-name-preview" class="file-preview-text">No se ha seleccionado ningún archivo</p>
+                    </div>
+
+                    <button type="submit" class="btn-submit-payment">Continuar Aporte</button>
+                </form>
+            </div>
+
+            <div class="payment-right-side">
+                <div class="ticket-container">
+                    
+                    <div class="credit-card-preview">
+                        <div class="card-top">
+                            <div class="chip-mock"></div>
+                            <span class="wifi-icon">📶</span>
+                        </div>
+                        <div class="card-middle">
+                            <p class="card-holder-name" id="card-name-display">Blanca García</p>
+                            <p class="card-number-hidden">•••• •••• •••• <span id="card-last-digits">3456</span></p>
+                        </div>
+                        <div class="card-bottom">
+                            <span class="card-brand-logo" id="card-brand-display">VISA</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-summary-ticket">
+                        <div class="ticket-divider-line"></div>
+                        <div class="ticket-details">
+                            <div class="detail-row">
+                                <span class="label">Producto</span>
+                                <span class="value emphasis">GlobalMasProfesional</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Cuota Inicial</span>
+                                <span class="value-badge">192.756.000 </span>
+                            </div>
+                        </div>
+                        <div class="ticket-total-zone">
+                            <p class="total-title">192.756.000 </p>
+                            <p class="total-amount">Tarifa</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
