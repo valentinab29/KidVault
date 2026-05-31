@@ -55,8 +55,8 @@
                 <p class="block-instruction">Consulta la informacion oficial proporcionada por GlobalSeguros</p>
                 
                 <div class="pdf-container">
-                    <a href="" target="_blank" class="btn-pdf">
-                        <img src="Documentos/GlobalUniversidad-Garantizada-Platino-anexo.pdf" alt="PDF" class="pdf-icon">
+                    <a href="https://cdn.globalseguroscolombia.com/public/2026/04/TARIFAS-GUG-GUGP-GUS-II-TRIMESTRE-2026.pdf" target="_blank" class="btn-pdf">
+                        <img src="multimedia_detalles/PDF.png" alt="PDF" class="pdf-icon">
                         <div class="pdf-text">
                             <strong>Ver tarifas</strong>
                             <span>PDF</span>
@@ -64,7 +64,7 @@
                         <span class="arrow-right">&gt;</span>
                     </a>
 
-                    <a href="multimedia_detalles/PDF - Acceso directo.lnk" target="_blank" class="btn-pdf">
+                    <a href="https://cdn.globalseguroscolombia.com/public/2026/04/POLIZA-SEGURO-EDUCATIVO-GlobalUniversidad-Garantizada-Platino-2025.pdf" target="_blank" class="btn-pdf">
                         <img src="multimedia_detalles/PDF.png" alt="PDF" class="pdf-icon">
                         <div class="pdf-text">
                             <strong>Ver clausurado</strong>
@@ -73,7 +73,7 @@
                         <span class="arrow-right">&gt;</span>
                     </a>
 
-                    <a href="multimedia_detalles/PDF - Acceso directo.lnk" target="_blank" class="btn-pdf">
+                    <a href="https://cdn.globalseguroscolombia.com/public/2026/04/GlobalUniversidad-Garantizada-Platino-.pdf" target="_blank" class="btn-pdf">
                         <img src="multimedia_detalles/PDF.png" alt="PDF" class="pdf-icon">
                         <div class="pdf-text">
                             <strong>Ver anexo</strong>
@@ -120,68 +120,86 @@
 
             <div class="channels-banner">
                 <p>Si lo deseas, también puedes comunicarte con nosotros por los siguientes canales: <strong>servicioalcliente@globalseguros.co - (601) 744 0084</strong></p>
-                <img src="Multimedia_Forms/decoracion-mancha.png" alt="" class="corner-shape">
+                <img src="multimedia_detalles/estrella.png" alt="" class="corner-shape">
             </div>
         </div>
 
         <div class="form-panel-wrapper">
             <div class="form-dark-card">
                 <div class="form-card-header">
-                    <h2>¡Me interesa?</h2>
-                    <a href="index.html" class="button-regresar">
+                    <h2>¡Me interesa¡</h2>
+                    <a href="planes" class="button-regresar">
                         <img src="multimedia_detalles/Arrays.png" alt="Regresar" class="flechas-img">
                     </a>
                 </div>
                 
                 <p class="form-instruction">Completa la siguiente información para recibir asesoría personalizada y conocer más sobre nuestras soluciones educativas.</p>
 
-                <form>
+                <form id="contactForm" onsubmit="event.preventDefault(); enviarFormulario();">
                     <div class="campo-dark">
-                        <input type="text" id="nombre" placeholder="Nombres y Apellidos">
+                        <input type="text" id="nombre" placeholder="Nombres y Apellidos" required>
                     </div>
 
                     <div class="campo-dark">
-                        <input type="email" id="correo" placeholder="Correo Edectrónico">
+                        <input type="email" id="correo" placeholder="Correo Electrónico" required>
                     </div>
 
                     <div class="campo-dark">
-                        <input type="text" id="celular" placeholder="Número de Celular">
+                        <input type="text" id="celular" placeholder="Número de Celular" required>
                     </div>
 
                     <div class="campo-dark">
-                        <input type="text" id="cedula" placeholder="Cédula">
+                        <input type="text" id="cedula" placeholder="Cédula" required>
                     </div>
 
                     <div class="campo-dark">
-                        <select id="ciudad">
+                        <select id="ciudad" required>
                             <option value="">Selecciona tu ciudad</option>
+                            <option value="Barranquilla">Barranquilla</option>
                             <option value="Bogotá">Bogotá</option>
+                            <option value="Bucaramanga">Bucaramanga</option>
+                            <option value="Cali">Cali</option>
+                            <option value="Cartagena">Cartagena</option>
+                            <option value="Manizales">Manizales</option>
+                            <option value="Medellín">Medellín</option>
+                            <option value="Pasto">Pasto</option>
+                            <option value="Pereira">Pereira</option>
                         </select>
                     </div>
 
                     <div class="campo-dark">
-                        <select id="consulta">
+                        <select id="consulta" required>
                             <option value="">Tipo de consulta</option>
+                            <option value="Quiero un seguro">Quiero un seguro</option>
+                            <option value="Información de mis productos">Información de mis productos</option>
+                            <option value="Sugerencias">Sugerencias</option>
                         </select>
                     </div>
 
                     <div class="campo-dark">
-                        <select id="producto">
+                        <select id="producto" required>
                             <option value="">Producto</option>
+                            <option value="Seguro educativo">Seguro educativo</option>
+                            <option value="De vida">De vida</option>
+                            <option value="Pensión voluntaria">Pensión voluntaria</option>
+                            <option value="Rentas voluntarias">Rentas voluntarias</option>
+                            <option value="Renta vitalicia">Renta vitalicia</option>
+                            <option value="Accidentes personales">Accidentes personales</option>
+                            <option value="Previsional de invalidez y sobrevivencia">Previsional de invalidez y sobrevivencia</option>
                         </select>
                     </div>
 
                     <div class="campo-dark">
-                        <select id="origen">
+                        <select id="origen" required>
                             <option value="">¿Cómo se enteró del producto?</option>
+                            <option value="Redes sociales">Redes sociales</option>
+                            <option value="Evento o feria">Evento o feria</option>
+                            <option value="Página web">Página web</option>
+                            <option value="Familiar o amigo">Familiar o amigo</option>
                         </select>
                     </div>
 
-                    <div class="campo-dark">
-                        <textarea id="sugerencias" placeholder="Sugerencias y observaciones" rows="3"></textarea>
-                    </div>
-
-                    <input type="button" value="Enviar" class="btn-submit-blue" onclick="enviarFormulario()">
+                    <button type="submit" class="btn-submit-blue">Enviar</button>
                 </form>
             </div>
         </div>
