@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f4f7fc;
+    min-height: 100vh;
+    display: flex;
+}
+
+.split-container {
+    width: 100vw;
+    display: flex;
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   ESTILOS SECCIÓN IZQUIERDA: DETALLES DEL PLAN
+   ========================================================================== */
+.details-content {
+    width: 55%;
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+}
+
+.logo-img {
+    max-width: 160px;
+    height: auto;
+}
+
+/* Encabezado del Plan */
+.plan-header h1 {
+    font-size: 2.8rem;
+    color: #1e1e1e;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.plan-header .subtitle {
+    font-size: 1.6rem;
+    color: #4a5568;
+    margin-bottom: 15px;
+}
+
+.tags-container {
+    display: flex;
+    gap: 10px;
+}
+
+.tag {
+    background-color: #e2e8f0;
+    color: #3182ce;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Bloques de Contenido */
+.section-block h3 {
+    color: #2d3748;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.block-instruction {
+    color: #718096;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* Grilla de Beneficios (Tarjetas) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.benefit-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+    width: 35px;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.benefit-card h4 {
+    font-size: 0.85rem;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.benefit-card p {
+    font-size: 0.75rem;
+    color: #718096;
+    line-height: 1.3;
+}
+
+/* Botones Contenedores de PDF */
+.pdf-container {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-pdf {
+    display: flex;
+    align-items: center;
+    background: #ebf8ff;
+    border: 1px solid #bee3f8;
+    border-radius: 10px;
+    padding: 12px 20px;
+    width: 32%;
+    text-decoration: none;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 10px rgba(49, 130, 206, 0.1);
+}
+
+.btn-pdf:hover {
+    transform: translateY(-2px);
+}
+
+.pdf-icon {
+    width: 28px;
+    height: auto;
+    margin-right: 12px;
+}
+
+.pdf-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf-text strong {
+    font-size: 0.85rem;
+    color: #2b6cb0;
+}
+
+.pdf-text span {
+    font-size: 0.75rem;
+    color: #4a5568;
+}
+
+.arrow-right {
+    color: #2b6cb0;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Características Técnicas (Inferior) */
+.tech-specs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.spec-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.spec-item img {
+    width: 22px;
+    height: auto;
+}
+
+.spec-item strong {
+    display: block;
+    font-size: 0.8rem;
+    color: #2d3748;
+    margin-bottom: 4px;
+}
+
+.spec-item span {
+    font-size: 0.75rem;
+    color: #718096;
+    line-height: 1.3;
+}
+
+/* Banner de Contacto e Ilustración Inferior */
+.channels-banner {
+    background-color: #bee3f8;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    color: #2c5282;
+    margin-top: auto;
+    z-index: 2;
+}
+
+.corner-shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 120px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   ESTILOS SECCIÓN DERECHA: FORMULARIO TARJETA OSCURA
+   ========================================================================== */
+.form-panel-wrapper {
+    width: 45%;
+    background-color: #ffffff;
+    display: flex;
+}
+
+.form-dark-card {
+    background: linear-gradient(135deg, #0b2240 0%, #16355c 100%);
+    width: 100%;
+    margin: 0;
+    border-top-left-radius: 40px; /* Curvatura marcada de la referencia */
+    border-bottom-left-radius: 40px;
+    padding: 50px 60px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.form-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-dark-card h2 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #3182ce; /* Título celeste suave ("¡Me interesa?") */
+}
+
+.button-regresar {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.button-regresar:hover {
+    transform: translateX(-4px);
+}
+
+.flechas-img {
+    max-width: 28px;
+    height: auto;
+}
+
+.form-instruction {
+    font-size: 0.9rem;
+    color: #cbd5e0;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+/* Campos del Formulario Translúcidos */
+.campo-dark {
+    margin-bottom: 14px;
+}
+
+.campo-dark input,
+.campo-dark select,
+.campo-dark textarea {
+    width: 100%;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.15); /* Efecto cristal traslúcido */
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    font-size: 0.95rem;
+    color: #ffffff;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.campo-dark input:focus,
+.campo-dark select:focus,
+.campo-dark textarea:focus {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #3182ce;
+}
+
+/* Estilo para placeholders dentro del formulario oscuro */
+.campo-dark input::placeholder,
+.campo-dark textarea::placeholder {
+    color: #a0aec0;
+}
+
+.campo-dark textarea {
+    border-radius: 15px;
+    resize: none;
+}
+
+/* Selector con flecha blanca */
+.campo-dark select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ffffff' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+/* Botón de Enviar Celeste Eléctrico */
+.btn-submit-blue {
+    width: 100%;
+    padding: 14px;
+    background-color: #0080ff; /* Azul vivo de la referencia */
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0, 128, 255, 0.3);
+    transition: background-color 0.2s;
+}
+
+.btn-submit-blue:hover {
+    background-color: #0066cc;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO (TABLETS Y MÓVILES)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .cards-grid, .tech-specs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .pdf-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .btn-pdf {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column;
+    }
+    .details-content, .form-panel-wrapper {
+        width: 100%;
+    }
+    .form-dark-card {
+        border-radius: 0; /* Quita los bordes redondeados laterales en móviles */
+        padding: 40px 20px;
+    }
+}
