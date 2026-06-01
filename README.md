@@ -56,7 +56,7 @@ Para que la aplicación web funcione de manera correcta y óptima, asegúrate de
 
 Aquí puedes visualizar el diseño final de la interfaz:
 
-| ![Captura Header](https://imagetourl.cloud/n764llpn.png) | ![Captura Tarjetas](https://imagetourl.cloud/euhwfot6.png) | ![Captura Testimonios](https://imagetourl.cloud/coupc1qm.png) | ![Captura Footer](https://imagetourl.cloud/hfdpejcy.png)  | ![Captura Formulario](https://cdn.phototourl.com/free/2026-06-01-022c8919-0d71-40fb-a0a3-3e24c5f99e6a.png) | ![Captura Detalles](https://cdn.phototourl.com/free/2026-06-01-069ad42e-eb02-440c-b2a4-afc6553cd2bb.png) |
+![Captura Header](https://imagetourl.cloud/n764llpn.png)  ![Captura Tarjetas](https://imagetourl.cloud/euhwfot6.png) ![Captura Testimonios](https://imagetourl.cloud/coupc1qm.png)  ![Captura Footer](https://imagetourl.cloud/hfdpejcy.png)  ![Captura Formulario](https://cdn.phototourl.com/free/2026-06-01-022c8919-0d71-40fb-a0a3-3e24c5f99e6a.png) ![Captura Detalles](https://cdn.phototourl.com/free/2026-06-01-069ad42e-eb02-440c-b2a4-afc6553cd2bb.png) 
 ![Captura MarketPlace](https://cdn.phototourl.com/free/2026-06-01-cb0bc3e8-19f7-498d-93b4-5ec9a6011cf7.png) 
 
 
