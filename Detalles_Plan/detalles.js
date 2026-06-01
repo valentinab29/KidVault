@@ -1,4 +1,7 @@
-function enviarFormulario() {
+function enviarFormulario(event) {
+    if (event) event.preventDefault();
+
+ 
     const nombre = document.getElementById('nombre').value.trim();
     const correo = document.getElementById('correo').value.trim();
     const celular = document.getElementById('celular').value.trim();
@@ -11,41 +14,41 @@ function enviarFormulario() {
 
     if (nombre === "" || correo === "" || celular === "" || cedula === "") {
         alert("⚠️ Por favor, escribe tus datos de contacto (Nombre, Correo, Celular y Cédula).");
-        return; 
+        return false; 
     }
 
     if (nombre.length < 3) {
         alert("⚠️ El nombre debe tener al menos 3 caracteres.");
-        return;
+        return false;
     }
     if (nombre.length > 50) {
         alert("⚠️ El nombre no puede superar los 50 caracteres.");
-        return;
+        return false;
     }
 
     if (!correo.includes("@") || !correo.includes(".")) {
         alert("⚠️ Por favor, ingrese un correo electrónico válido.");
-        return;
+        return false;
     }
 
     if (celular.length !== 10 || isNaN(celular)) {
         alert("⚠️ El número de celular debe tener exactamente 10 dígitos numéricos.");
-        return;
+        return false;
     }
 
     if (cedula.length < 7 || cedula.length > 10 || isNaN(cedula)) {
         alert("⚠️ La cédula debe ser numérica y tener entre 7 y 10 dígitos.");
-        return;
+        return false;
     }
 
     if (ciudad === "" || consulta === "" || producto === "" || origen === "") {
         alert("⚠️ Por favor, selecciona una opción en todos los menús desplegables.");
-        return; 
+        return false; 
     }
 
     if (consulta === "Sugerencias" && sugerencias === "") {
         alert("📝 Ya que seleccionaste el tipo de consulta 'Sugerencias', por favor escríbenos tu comentario en la caja inferior.");
-        return;
+        return false;
     }
 
     const informeFormulario = {
@@ -63,8 +66,6 @@ function enviarFormulario() {
     console.log("¡Formulario de Detalle Procesado!", informeFormulario);
     
     alert(`¡Perfecto, ${nombre}!\nHemos registrado tu solicitud sobre nuestro "${producto}". Nos comunicaremos contigo a la ciudad de ${ciudad}.`);
-
-    document.querySelector('form').reset();
 
     window.location.href = "loading.html";
 }

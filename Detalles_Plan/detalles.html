@@ -51,8 +51,8 @@
             </div>
 
             <div class="section-block">
-                <h3>Beneficios Destacados</h3>
-                <p class="block-instruction">Consulta la informacion oficial proporcionada por GlobalSeguros</p>
+                <h3>Documentos Oficiales</h3>
+                <p class="block-instruction">Consulta la información oficial proporcionada por GlobalSeguros</p>
                 
                 <div class="pdf-container">
                     <a href="https://cdn.globalseguroscolombia.com/public/2026/04/TARIFAS-GUG-GUGP-GUS-II-TRIMESTRE-2026.pdf" target="_blank" class="btn-pdf">
@@ -85,7 +85,7 @@
             </div>
 
             <div class="section-block">
-                <h3>Beneficios Destacados</h3>
+                <h3>Especificaciones Técnicas</h3>
                 <div class="tech-specs">
                     <div class="spec-item">
                         <img src="multimedia_detalles/User.png" alt="Icono">
@@ -127,12 +127,12 @@
         <div class="form-panel-wrapper">
             <div class="form-dark-card">
                 <div class="form-card-header">
-                    <h2>¡Me interesa¡</h2>
+                    <h2>¡Me interesa!</h2>
                 </div>
                 
                 <p class="form-instruction">Completa la siguiente información para recibir asesoría personalizada y conocer más sobre nuestras soluciones educativas.</p>
 
-                <form id="contactForm">
+                <form id="contactForm" action="loading.html">
                     <div class="campo-dark">
                         <input type="text" id="nombre" placeholder="Nombres y Apellidos" required>
                     </div>
@@ -196,12 +196,13 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="btn-submit-blue">Enviar</button>
+                    <input type="button" value="Enviar" class="btn-submit" onclick="enviarFormulario(event)">
                 </form>
             </div>
         </div>
 
     </div>
 
+    <script src="detalles.js"></script>
 </body>
 </html>
