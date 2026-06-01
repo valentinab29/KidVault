@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Pago - KidVault</title>
+    
+    <link rel="stylesheet" href="marketplace.css">
+</head>
+<body>
+
+    <div class="split-container-payment">
+        
+        <header class="global-top-bar">
+            <div class="global-logo-container">
+                <img src="multimedia_mp/Logo-GS-sinfuturo-SINFONDO.png" alt="Global Seguros" class="global-brand-logo">
+            </div>
+        </header>
+
+        <div class="main-payment-card">
+            
+            <div class="payment-left-side">
+                <div class="payment-header">
+                    <h2><span class="icon-wallet">💳</span> Medio de Pago</h2>
+                    <h3>Construyamos su futuro educativo.</h3>
+                    <p class="subtitle">Selecciona uno o varios seguros para añadir a tu plan y asegurar el futuro de tus hijos.</p>
+                </div>
+
+                <form id="marketplaceForm">
+                    
+                    <p class="section-hint">Selecciona los seguros que deseas adquirir (Máximo 6 productos en total):</p>
+                    <div class="products-grid">
+                        
+                        <div class="product-card-wrapper" data-id="platino">
+                            <div class="product-clickable-area">
+                                <input type="checkbox" class="seguro-checkbox" id="check-platino" data-id="platino" data-nombre="Global Más Profesional" data-precio="192756000">
+                                <label for="check-platino" class="product-card-content">
+                                    <div class="product-info">
+                                        <span class="product-title">Universidad Garantizada Platino</span>
+                                    </div>
+                                    <span class="product-price">$192.756.000</span>
+                                </label>
+                            </div>
+                            <div class="quantity-selector-container">
+                                <button type="button" class="qty-btn qty-minus" data-id="platino">-</button>
+                                <input type="number" class="product-qty-input" id="qty-platino" value="1" min="1" max="5" readonly>
+                                <button type="button" class="qty-btn qty-plus" data-id="platino">+</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card-wrapper" data-id="garantizada">
+                            <div class="product-clickable-area">
+                                <input type="checkbox" class="seguro-checkbox" id="check-garantizada" data-id="garantizada" data-nombre="Universidad Segura" data-precio="120000000">
+                                <label for="check-garantizada" class="product-card-content">
+                                    <div class="product-info">
+                                        <span class="product-title">Universidad Garantizada</span>
+                                    </div>
+                                    <span class="product-price">$120.000.000</span>
+                                </label>
+                            </div>
+                            <div class="quantity-selector-container">
+                                <button type="button" class="qty-btn qty-minus" data-id="garantizada">-</button>
+                                <input type="number" class="product-qty-input" id="qty-garantizada" value="1" min="1" max="5" readonly>
+                                <button type="button" class="qty-btn qty-plus" data-id="garantizada">+</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card-wrapper" data-id="semestres">
+                            <div class="product-clickable-area">
+                                <input type="checkbox" class="seguro-checkbox" id="check-semestres" data-id="semestres" data-nombre="Renta Educativa" data-precio="45000000">
+                                <label for="check-semestres" class="product-card-content">
+                                    <div class="product-info">
+                                        <span class="product-title">Global Semestres</span>
+                                    </div>
+                                    <span class="product-price">$45.000.000</span>
+                                </label>
+                            </div>
+                            <div class="quantity-selector-container">
+                                <button type="button" class="qty-btn qty-minus" data-id="semestres">-</button>
+                                <input type="number" class="product-qty-input" id="qty-semestres" value="1" min="1" max="5" readonly>
+                                <button type="button" class="qty-btn qty-plus" data-id="semestres">+</button>
+                            </div>
+                        </div>
+
+                        <div class="product-card-wrapper" data-id="idiomas">
+                            <div class="product-clickable-area">
+                                <input type="checkbox" class="seguro-checkbox" id="check-idiomas" data-id="idiomas" data-nombre="Seguro Idiomas" data-precio="15500000">
+                                <label for="check-idiomas" class="product-card-content">
+                                    <div class="product-info">
+                                        <span class="product-title">UniSegura Plus Semestre</span>
+                                    </div>
+                                    <span class="product-price">$15.500.000</span>
+                                </label>
+                            </div>
+                            <div class="quantity-selector-container">
+                                <button type="button" class="qty-btn qty-minus" data-id="idiomas">-</button>
+                                <input type="number" class="product-qty-input" id="qty-idiomas" value="1" min="1" max="5" readonly>
+                                <button type="button" class="qty-btn qty-plus" data-id="idiomas">+</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <p class="section-hint" style="margin-top: 25px;">Selecciona el método de pago:</p>
+                    <div class="payment-methods-tabs">
+                        <div class="method-tab-wrapper">
+                            <input type="radio" id="pse" name="metodo_pago" value="pse" checked>
+                            <label for="pse" class="method-tab-label">
+                                <img src="multimedia_mp/logo pse.png" alt="PSE" class="brand-tab-img logo-pse">
+                            </label>
+                        </div>
+                        <div class="method-tab-wrapper">
+                            <input type="radio" id="visa" name="metodo_pago" value="visa">
+                            <label for="visa" class="method-tab-label">
+                                <img src="multimedia_mp/logo visa.png" alt="Visa" class="brand-tab-img">
+                            </label>
+                        </div>
+                        <div class="method-tab-wrapper">
+                            <input type="radio" id="mastercard" name="metodo_pago" value="mastercard">
+                            <label for="mastercard" class="method-tab-label">
+                                <img src="multimedia_mp/logo mastercard.png" alt="Mastercard" class="brand-tab-img">
+                            </label>
+                        </div>
+                        <div class="method-tab-wrapper">
+                            <input type="radio" id="debito" name="metodo_pago" value="debito">
+                            <label for="debito" class="method-tab-label">
+                                <span class="tab-text-fallback">DÉBITO AUTO</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <p class="section-hint">Datos de facturación:</p>
+
+                    <div class="campo" id="contenedor-banco">
+                        <select id="banco" required>
+                            <option value="">Selecciona una entidad bancaria.</option>
+                            <option value="bancolombia">Bancolombia</option>
+                            <option value="bogota">Banco de Bogotá</option>
+                            <option value="davivienda">Davivienda</option>
+                            <option value="bbva">BBVA</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <input type="text" id="titular" placeholder="Nombre del titular" required>
+                    </div>
+
+                    <div id="campos-tarjeta-fisica" style="display: none;">
+                        <div class="campo">
+                            <input type="text" id="n-tarjeta" placeholder="Número de tarjeta" maxlength="19">
+                        </div>
+
+                        <div class="row-inputs">
+                            <div class="campo half">
+                                <input type="text" id="cvv" placeholder="CVV" maxlength="3">
+                            </div>
+                            <div class="campo row-date half">
+                                <input type="text" id="exp-mm" placeholder="MM" maxlength="2" class="date-input">
+                                <span class="date-separator">/</span>
+                                <input type="text" id="exp-aa" placeholder="AA" maxlength="2" class="date-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="document-upload-section">
+                        <h4>Documentación Requerida</h4>
+                        <div class="file-drop-zone">
+                            <label for="documento" class="file-label-wrapper">
+                                <span class="folder-icon">📂</span>
+                                <span class="label-text">Seleccionar documento (PDF, PNG, JPG)</span>
+                            </label>
+                            <input type="file" id="documento" accept=".pdf, .png, .jpg, .jpeg" required>
+                        </div>
+                        <p id="file-name-preview" class="file-preview-text">No se ha seleccionado ningún archivo</p>
+                    </div>
+
+                    <button type="submit" class="btn-submit-payment">Finalizar Compra de Planes</button>
+                </form>
+            </div>
+
+            <div class="payment-right-side">
+                <div class="ticket-container">
+                    
+                    <div class="credit-card-preview">
+                        <div class="card-top">
+                            <div class="chip-mock"></div>
+                            <span class="wifi-icon">📶</span>
+                        </div>
+                        <div class="card-middle">
+                            <p class="card-holder-name" id="card-name-display">Blanca García</p>
+                            <p class="card-number-hidden">•••• •••• •••• <span id="card-last-digits">3456</span></p>
+                        </div>
+                        <div class="card-bottom">
+                            <span class="card-brand-logo" id="card-brand-display">PSE</span>
+                        </div>
+                    </div>
+
+                    <div class="invoice-summary-ticket">
+                        <div class="ticket-divider-line"></div>
+                        <div class="ticket-details">
+                            <div class="detail-row">
+                                <span class="label">Productos:</span>
+                                <span class="value emphasis" id="ticket-productos-lista" style="text-align: right; font-size: 0.8rem; display: block; max-width: 180px;">Ninguno seleccionado</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Total Planes</span>
+                                <span class="value-badge" id="ticket-badge-total">0</span>
+                            </div>
+                        </div>
+                        <div class="ticket-total-zone">
+                            <p class="total-title" id="ticket-monto-total">$0</p>
+                            <p class="total-amount">Total a Pagar</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<script src="marketplace.js"></script>
+</body>
+</html>
