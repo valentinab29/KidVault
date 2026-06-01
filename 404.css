@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.pantalla-error {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #7fa9c4, #2b5674);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.encabezado-error {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.imagen-logo {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+.contenido-error {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-bottom: 60px;
+}
+
+.numero-404 {
+    font-size: 140px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    line-height: 1;
+    margin-bottom: 15px;
+    text-shadow: 0px 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.textos-error h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.subtitulo-error {
+    font-size: 16px;
+    opacity: 0.9;
+    max-width: 500px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+}
+
+.boton-regresar {
+    background-color: white;
+    color: #333;
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.boton-regresar:hover {
+    transform: scale(1.05);
+}
