@@ -19,9 +19,6 @@ body {
     position: relative; 
 }
 
-/* ==========================================================================
-   CONTENEDOR IZQUIERDO (DISEÑO VISUAL FIJO)
-   ========================================================================== */
 .form-visual {
     background: radial-gradient(circle at top left, #0e2d59 0%, #004080 35%, #1a73e8 75%, #6ba4e8 100%);
     width: 45%;
@@ -36,7 +33,6 @@ body {
     height: 100vh;     
 }
 
-/* Encabezado: Distribución limpia de Logo + Flecha */
 .brand {
     display: flex;
     justify-content: space-between; 
@@ -50,7 +46,6 @@ body {
     display: block;
 }
 
-/* Animación e Interactividad de las flechas */
 .button-regresar {
     display: inline-flex;
     justify-content: center;
@@ -63,16 +58,15 @@ body {
 .flechas-img {
     max-width: 24px;  
     height: auto;
-    opacity: 0.85; /* Un toque más de brillo inicial para fondos oscuros */
+    opacity: 0.85; 
     display: block;
 }
 
 .button-regresar:hover {
     opacity: 1;        
-    transform: translateX(-5px); /* Desplazamiento sutil a la izquierda */
+    transform: translateX(-5px); 
 }
 
-/* Contenido Principal de Texto y Gorro Animado */
 .visual-content {
     flex-grow: 1;
     display: flex;
@@ -114,9 +108,6 @@ body {
     }
 }
 
-/* ==========================================================================
-   CONTENEDOR DERECHO (FORMULARIO)
-   ========================================================================== */
 .form-content {
     width: 55%;
     margin-left: 45%;
@@ -142,7 +133,6 @@ body {
     margin-bottom: 25px;
 }
 
-/* Campos de Formulario */
 .campo {
     margin-bottom: 12px;
 }
@@ -178,7 +168,7 @@ body {
     color: #b0c4de;
 }
 
-/* Botón de Envío */
+
 .btn-submit {
     width: 100%;
     padding: 14px;
@@ -197,7 +187,7 @@ body {
     background-color: #000366;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .split-container {
         flex-direction: column;
@@ -205,7 +195,7 @@ body {
         overflow-y: visible;
     }
     .form-visual {
-        position: relative; /* Desactiva el fix en móviles */
+        position: relative; 
         width: 100%;
         min-height: 400px;
         padding: 30px;
