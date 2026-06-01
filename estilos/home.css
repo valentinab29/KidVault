@@ -151,24 +151,29 @@
 }
 
 .tarjeta-paso {
-    background: rgba(49, 98, 206, 0.507);
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 30px;
-    border-radius: 25px;
-    width: 600px;
-    min-height: 180px;
+    border-radius: 20px;
+    width: 260px;
+    min-height: 200px;
     text-align: left;
     margin-left: -20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     cursor: pointer; 
     position: relative;
     z-index: 1;
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tarjeta-paso:hover {
-  transform: scale(1.05);
-  background: #5ca9f2;
+.tarjeta-paso.activa {
+    background: #0084FF;
+    transform: scale(1.05);
+    z-index: 5; 
+    margin-left: -20px; 
+    margin-right: -10px;
+    box-shadow: 0 15px 35px rgba(0, 132, 255, 0.4);
 }
 
 .tarjeta-paso h4 { font-size: 22px; margin-bottom: 15px; }
@@ -310,7 +315,7 @@
 .enlaces-pie a, .enlaces-pie p {
     display: block;
     margin-bottom: 12px;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .enlaces-pie a:hover { opacity: 1; }
@@ -319,7 +324,6 @@
     display: flex;
     gap: 15px;
     font-size: 18px;
-    background: none;
 }
 
 @media (max-width: 968px) {
@@ -335,23 +339,21 @@
 
 
 
-
-
-
-
-
+/* ==========================================================================
+   ESTILOS PARA LA PÁGINA INDEPENDIENTE DE CARGA (PROCESANDO.HTML)
+   ========================================================================== */
 :root {
-    --azul-oscuro-fondo: #0a2540; 
+    --azul-oscuro-fondo: #0a2540; /* Color principal de tu marca */
     --celeste-kidvault: #5cc2f2;
 }
 
-
+/* Forzamos que el body de esta página ocupe todo el espacio y tenga tu fondo */
 .body-pantalla-carga {
     margin: 0;
     padding: 0;
     background-color: var(--azul-oscuro-fondo);
     min-height: 100vh;
-    font-family: Arial, sans-serif; 
+    font-family: Arial, sans-serif; /* O la tipografía que cargues de Google Fonts */
     overflow-x: hidden;
 }
 
@@ -366,7 +368,7 @@
     box-sizing: border-box;
 }
 
-
+/* Contenedor central con efecto vidrio esmerilado (Glassmorphism) */
 .contenedor-carga-cristal {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -383,7 +385,7 @@
     z-index: 5;
 }
 
-
+/* Encabezado interno de la tarjeta */
 .encabezado-carga {
     display: flex;
     justify-content: space-between;
@@ -392,11 +394,17 @@
 }
 
 .logo-carga img {
-    height: 35px; 
+    height: 35px; /* Ajusta según el tamaño de tu logo */
     width: auto;
 }
 
+.icono-regresar-carga {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: bold;
+    font-size: 18px;
+}
 
+/* Contenido Principal */
 .contenido-carga h2 {
     font-size: 36px;
     font-weight: 800;
@@ -412,25 +420,13 @@
 }
 
 .render-libros {
-    max-height: 150px;
+    max-height: 160px;
     width: auto;
     object-fit: contain;
     animation: flotarSuave 3s ease-in-out infinite; /* Movimiento fluido 3D */
 }
 
-.contenedor-render-libreta {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 25px;
-}
-
-.render-libreta {
-    max-height: 150px;
-    width: auto;
-    object-fit: contain;
-    animation: flotarSuave 3s ease-in-out infinite; /* Movimiento fluido 3D */
-}
-
+/* Barra de progreso de 5 segundos */
 .barra-progreso-contenedor {
     width: 140px;
     height: 4px;
@@ -456,7 +452,7 @@
     opacity: 0.85;
 }
 
-
+/* Pie de página de la tarjeta */
 .pie-carga {
     margin-top: 35px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -471,18 +467,18 @@
     font-weight: 600;
 }
 
-
+/* Ilustración del personaje adaptada a la esquina inferior izquierda */
 .personaje-flotante-carga {
     position: absolute;
     bottom: 0;
     left: 4%;
-    max-height: 350px;
+    max-height: 220px;
     width: auto;
     z-index: 10;
     pointer-events: none;
 }
 
-
+/* --- ANIMACIONES NATIVAS (CSS3) --- */
 @keyframes flotarSuave {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
@@ -492,7 +488,7 @@
     to { width: 100%; }
 }
 
-
+/* Responsive Obligatorio de la Rúbrica (< 480px) */
 @media (max-width: 480px) {
     .contenedor-carga-cristal {
         padding: 25px;
@@ -502,6 +498,405 @@
         font-size: 26px;
     }
     .personaje-flotante-carga {
-        display: none; 
+        display: none; /* Se oculta para no pisar el contenido en pantallas muy pequeñas */
     }
+}
+
+
+
+
+/* ==========================================================================
+   ESTILOS COMPONENTES DASHBOARD / PLATAFORMA DE USUARIO (DASHBOARD.HTML)
+   ========================================================================== */
+
+.body-dashboard {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #f4f7f6 !important;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    width: 100vw;
+    color: #333333;
+    display: block;
+}
+
+.contenedor-plataforma {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #f4f7f6;
+}
+
+/* --- BARRA LATERAL (ASIDE DE ADORNO) --- */
+.barra-lateral {
+    width: 280px;
+    min-width: 280px;
+    background: linear-gradient(180deg, #133273 0%, #0d2046 100%);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+.logo-plataforma {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.logo-plataforma img {
+    max-width: 160px;
+    height: auto;
+}
+
+.tarjeta-usuario-cristal {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 20px 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.contenedor-avatar {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px auto;
+}
+
+.avatar-foto {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #ffffff;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.decorativo-editar-perfil {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    background: #ffffff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    user-select: none;
+}
+
+.nombre-usuario {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 4px 0;
+    color: #ffffff;
+}
+
+.correo-usuario {
+    font-size: 11px;
+    opacity: 0.7;
+    margin: 0;
+    word-break: break-all;
+    color: #ffffff;
+}
+
+.titulo-categoria-menu {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    padding-left: 15px;
+}
+
+/* Items del menú estáticos (Sin cursor pointer) */
+.item-menu-estatico {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 12px 15px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    user-select: none;
+}
+
+.item-menu-estatico.activo {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.contenedor-salir {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+/* Botón Salir Real */
+.boton-salir-real {
+    display: block;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.boton-salir-real:hover {
+    background: #e63946;
+    border-color: #e63946;
+}
+
+/* --- ZONA DE TRABAJO DERECHA (MAIN) --- */
+.contenido-plataforma {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #f4f7f6;
+}
+
+.barra-superior-plataforma {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.barra-superior-plataforma h1 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.acciones-plataforma-estaticas {
+    display: flex;
+    gap: 15px;
+}
+
+.icono-top-decorativo {
+    background: #e2e8f0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+/* GRID PRINCIPAL */
+.grilla-dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* Tarjeta 1: Progreso */
+.tarjeta-banner-azul {
+    grid-column: 1 / -1;
+    background: linear-gradient(90deg, #1d63ed 0%, #1742c4 100%);
+    border-radius: 30px;
+    padding: 35px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.marca img {
+    height: 110px;
+    width: auto;
+    object-fit: contain;
+}
+
+.info-banner-azul h3 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+}
+
+.contenedor-barra-progreso-global {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.porcentaje-label {
+    font-size: 12px;
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+.barra-progreso-fondo {
+    flex: 1;
+    height: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.barra-progreso-relleno {
+    height: 100%;
+    background: #5cc2f2;
+    border-radius: 10px;
+}
+
+/* Tarjeta 2: Próximo Aporte (Coral) */
+.tarjeta-aporte-coral {
+    background-color: #d9546a;
+    border-radius: 30px;
+    padding: 30px;
+    color: #ffffff;
+}
+
+.tarjeta-aporte-coral h4, .tarjeta-opciones-arena h4 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+}
+
+.contenido-aporte {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.billetera-3d-contenedor img {
+    height: 90px;
+    width: auto;
+    object-fit: contain;
+}
+
+.bloque-fecha-vencimiento {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.acciones-pago-reales {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Único Botón con Click Real e interacción */
+.boton-pago-real {
+    background: #ffffff;
+    color: #d9546a;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.boton-pago-real:hover {
+    transform: scale(1.04);
+}
+
+/* Adorno estático de Pausar */
+.boton-pago-decorativo {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 13px;
+    display: inline-block;
+    user-select: none;
+}
+
+/* Tarjeta 3: Opciones Futuras (Arena) */
+.tarjeta-opciones-arena {
+    background-color: #cbd0c0;
+    border-radius: 30px;
+    padding: 30px;
+    color: #2b2b2b;
+}
+
+.descripcion-opciones {
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    opacity: 0.9;
+}
+
+.contenedor-enlaces-futuros {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.bloque-botones-decorativos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Modificado a bloques de adorno de texto */
+.tag-futuro-decorativo {
+    background-color: #ffffff;
+    color: #2b2b2b;
+    padding: 12px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    user-select: none;
+}
+
+.render-libros-esquina img {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Footer institucional integrado */
+.pie-plataforma-contacto {
+    margin-top: auto;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #718096;
+}
+
+.canales-texto-global {
+    color: #2d3748;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 768px) {
+    .contenedor-plataforma { flex-direction: column; }
+    .barra-lateral { width: 100%; min-width: 100%; }
+    .grilla-dashboard { grid-template-columns: 1fr; }
+    .tarjeta-banner-azul { flex-direction: column; text-align: center; }
 }

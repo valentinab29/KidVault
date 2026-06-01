@@ -126,7 +126,6 @@ body {
     margin-top: 10px;   
     margin-bottom: 10px; 
 }
-
 .instruction {
     color: #757575;
     font-size: 0.95rem;
@@ -173,6 +172,7 @@ body {
     width: 100%;
     padding: 14px;
     background-color: #0281DD;
+    background-color:#0281DD;
     color: #ffffff;
     border: none;
     border-radius: 25px;
@@ -185,6 +185,31 @@ body {
 
 .btn-submit:hover {
     background-color: #000366;
+}
+
+
+.brand {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+}
+
+.button-regresar {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+    cursor: pointer;
+}
+
+.flechas-img {
+    max-width: 24px;  
+    height: auto;
+    opacity: 0.7;      
+}
+
+.button-regresar:hover {
+    opacity: 1;        
+    transform: translateX(-5px); 
 }
 
 
