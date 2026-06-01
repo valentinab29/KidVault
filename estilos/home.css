@@ -183,6 +183,13 @@
     padding: 80px 5%;
 }
 
+.seccion-testimonios {
+    padding: 80px 5%;
+    color: #ffffff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
 .seccion-testimonios h2 {
     text-align: center;
     font-size: 42px;
@@ -207,24 +214,43 @@
     opacity: 0.7;
 }
 
-/* CORRECCIÓN: Usamos flex en lugar de grid para que no se estiren al 100% */
 .rejilla-testimonios {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 900px; 
 }
 
-/* CORRECCIÓN: Le ponemos un ancho máximo fijo para que queden idénticas a tu diseño */
+
+.grupo-testimonios {
+    display: none;
+    opacity: 0;
+    gap: 30px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+.grupo-testimonios.activo {
+    display: flex;
+    justify-content: center;
+    opacity: 1;
+}
+
 .tarjeta-testimonio {
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 25px;
-    padding: 50px 30px 30px 30px;
+    padding: 40px 30px 30px 30px;
     position: relative;
     backdrop-filter: blur(5px);
-    width: 460px; /* Evita que se vuelvan tubos estirados */
+    width: 400px; 
     box-sizing: border-box;
-    text-align: left; /* Alinea los textos a la izquierda dentro de la tarjeta */
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .etiqueta-cliente {
@@ -238,25 +264,28 @@
     font-weight: bold;
 }
 
-/* CORRECCIÓN: Bajamos un poco la altura para darle prioridad visual al texto */
+
 .imagen-usuario {
-    width: 100%;
-    height: 180px; 
-    border-radius: 15px;
-    margin-bottom: 20px;
-    object-fit: cover;
+    width: 130px;      
+    height: 130px;     
+    border-radius: 50%; 
+    margin: 0 auto 20px auto;
+    object-fit: cover;  
+    border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .tarjeta-testimonio h4 { 
-    font-size: 20px; 
-    margin-bottom: 10px; 
+    font-size: 22px; 
+    margin-bottom: 12px; 
+    font-weight: bold;
 }
 
 .tarjeta-testimonio p { 
     font-size: 14px; 
     opacity: 0.85; 
     line-height: 1.6; 
-    font-style: italic; 
+    font-style: italic;
+    margin: 0;
 }
 
 .boton-centrado { 
@@ -264,7 +293,7 @@
     margin-top: 40px; 
 }
 
-/* Tus estilos de la sección de contacto permanecen intactos abajo */
+
 .seccion-contacto {
     padding: 100px 10%;
 }
@@ -358,9 +387,7 @@
 
 
 
-/* ==========================================================================
-   ESTILOS PARA LA PÁGINA INDEPENDIENTE DE CARGA (PROCESANDO.HTML)
-   ========================================================================== */
+
 :root {
     --azul-oscuro-fondo: #0a2540; /* Color principal de tu marca */
     --celeste-kidvault: #5cc2f2;
