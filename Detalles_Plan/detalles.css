@@ -249,20 +249,6 @@ body {
     color: #3182ce;
 }
 
-.button-regresar {
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.button-regresar:hover {
-    transform: translateX(-4px);
-}
-
-.flechas-img {
-    max-width: 28px;
-    height: auto;
-}
-
 .form-instruction {
     font-size: 0.9rem;
     color: #cbd5e0;
