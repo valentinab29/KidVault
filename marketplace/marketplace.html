@@ -14,64 +14,93 @@
             <div class="global-logo-container">
                 <img src="multimedia_mp/Logo-GS-sinfuturo-SINFONDO.png" alt="Global Seguros" class="global-brand-logo">
             </div>
-            <a href="#" class="btn-back-nav" aria-label="Volver">
-                <span class="nav-arrow-icons">«</span>
-            </a>
         </header>
 
         <div class="main-payment-card">
             
             <div class="payment-left-side">
                 <div class="payment-header">
-                    <h2><span class="icon-wallet">💳</span> Método de pago</h2>
-                    <h3>Continuemos construyendo su futuro.</h3>
-                    <p class="subtitle">Selecciona o actualiza el método con el que deseas continuar tus aportes.</p>
+                    <h2><span class="icon-wallet">💳</span> Pasarela de Pago</h2>
+                    <h3>Construyamos su portafolio educativo.</h3>
+                    <p class="subtitle">Selecciona uno o varios seguros para añadir a tu plan y asegurar el futuro de tus hijos.</p>
                 </div>
 
-                <div class="payment-methods-tabs">
-                    
-                    <div class="method-tab-wrapper">
-                        <input type="radio" id="pse" name="metodo_pago" value="pse" checked>
-                        <label for="pse" class="method-tab-label">
-                            <img src="multimedia_mp/logo pse.png" alt="PSE" class="brand-tab-img logo-pse">
-                        </label>
-                    </div>
-                    
-                    <div class="method-tab-wrapper">
-                        <input type="radio" id="visa" name="metodo_pago" value="visa">
-                        <label for="visa" class="method-tab-label">
-                            <img src="multimedia_mp/logo visa.png" alt="Visa" class="brand-tab-img">
-                        </label>
-                    </div>
-                    
-                    <div class="method-tab-wrapper">
-                        <input type="radio" id="mastercard" name="metodo_pago" value="mastercard">
-                        <label for="mastercard" class="method-tab-label">
-                            <img src="multimedia_mp/logo mastercard.png" alt="Mastercard" class="brand-tab-img">
-                        </label>
-                    </div>
-                    
-                    <div class="method-tab-wrapper">
-                        <input type="radio" id="debito" name="metodo_pago" value="debito">
-                        <label for="debito" class="method-tab-label">
-                            <span class="tab-text-fallback">DÉBITO AUTO</span>
-                        </label>
-                    </div>
-
-                </div>
-                
                 <form id="marketplaceForm">
-                    <p class="section-hint">Escribe tus datos personales aqui.</p>
+                    
+                    <p class="section-hint">Selecciona los seguros que deseas adquirir:</p>
+                    <div class="products-grid">
+                        
+                        <label class="product-card">
+                            <input type="checkbox" class="seguro-checkbox" data-nombre="Global Más Profesional" data-precio="192756000">
+                            <div class="product-card-content">
+                                <div class="product-info">
+                                    <span class="product-title">UniversidadGarantizadaPlatino</span>
+                                </div>
+                                <span class="product-price">$192.756.000</span>
+                            </div>
+                        </label>
 
-                    <div class="campo">
-                        <select id="billetera-digital">
-                            <option value="">Selecciona una billetera digital.</option>
-                            <option value="nequi">Nequi</option>
-                            <option value="daviplata">Daviplata</option>
-                            <option value="movii">Movii</option>
-                            <option value="tpaga">Tpaga</option>
-                        </select>
+                        <label class="product-card">
+                            <input type="checkbox" class="seguro-checkbox" data-nombre="Universidad Segura" data-precio="120000000">
+                            <div class="product-card-content">
+                                <div class="product-info">
+                                    <span class="product-title">UniversidadGarantizada</span>
+                                </div>
+                                <span class="product-price">$120.000.000</span>
+                            </div>
+                        </label>
+
+                        <label class="product-card">
+                            <input type="checkbox" class="seguro-checkbox" data-nombre="Renta Educativa" data-precio="45000000">
+                            <div class="product-card-content">
+                                <div class="product-info">
+                                    <span class="product-title">GlobalSemestres</span>
+                                </div>
+                                <span class="product-price">$45.000.000</span>
+                            </div>
+                        </label>
+
+                        <label class="product-card">
+                            <input type="checkbox" class="seguro-checkbox" data-nombre="Seguro Idiomas" data-precio="15500000">
+                            <div class="product-card-content">
+                                <div class="product-info">
+                                    <span class="product-title">UniSeguraPlusSemestre<span>
+                                </div>
+                                <span class="product-price">$15.500.000</span>
+                            </div>
+                        </label>
+
                     </div>
+
+                    <p class="section-hint" style="margin-top: 25px;">Selecciona el método de pago:</p>
+                    <div class="payment-methods-tabs">
+                        <div class="method-tab-wrapper">
+                            <input type="radio" id="pse" name="metodo_pago" value="pse" checked>
+                            <label for="pse" class="method-tab-label">
+                                <img src="multimedia_mp/logo pse.png" alt="PSE" class="brand-tab-img logo-pse">
+                            </label>
+                        </div>
+                        <div class="method-tab-wrapper">
+                            <input type="radio" id="visa" name="metodo_pago" value="visa">
+                            <label for="visa" class="method-tab-label">
+                                <img src="multimedia_mp/logo visa.png" alt="Visa" class="brand-tab-img">
+                            </label>
+                        </div>
+                        <div class="method-tab-wrapper">
+                            <input type="radio" id="mastercard" name="metodo_pago" value="mastercard">
+                            <label for="mastercard" class="method-tab-label">
+                                <img src="multimedia_mp/logo mastercard.png" alt="Mastercard" class="brand-tab-img">
+                            </label>
+                        </div>
+                        <div class="method-tab-wrapper">
+                            <input type="radio" id="debito" name="metodo_pago" value="debito">
+                            <label for="debito" class="method-tab-label">
+                                <span class="tab-text-fallback">DÉBITO AUTO</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <p class="section-hint">Datos de facturación:</p>
 
                     <div class="campo">
                         <select id="banco">
@@ -93,12 +122,12 @@
 
                     <div class="row-inputs">
                         <div class="campo half">
-                            <input type="text" id="cvv" placeholder="CVV (Ej: 327)" maxlength="3" required>
+                            <input type="text" id="cvv" placeholder="CVV" maxlength="3" required>
                         </div>
                         <div class="campo row-date half">
-                            <input type="text" id="exp-mm" placeholder="DD" maxlength="2" class="date-input" required>
+                            <input type="text" id="exp-mm" placeholder="MM" maxlength="2" class="date-input" required>
                             <span class="date-separator">/</span>
-                            <input type="text" id="exp-aa" placeholder="MM" maxlength="2" class="date-input" required>
+                            <input type="text" id="exp-aa" placeholder="AA" maxlength="2" class="date-input" required>
                         </div>
                     </div>
 
@@ -114,7 +143,7 @@
                         <p id="file-name-preview" class="file-preview-text">No se ha seleccionado ningún archivo</p>
                     </div>
 
-                    <button type="submit" class="btn-submit-payment">Continuar Aporte</button>
+                    <button type="submit" class="btn-submit-payment">Finalizar Compra de Planes</button>
                 </form>
             </div>
 
@@ -139,17 +168,17 @@
                         <div class="ticket-divider-line"></div>
                         <div class="ticket-details">
                             <div class="detail-row">
-                                <span class="label">Producto</span>
-                                <span class="value emphasis">GlobalMasProfesional</span>
+                                <span class="label">Productos:</span>
+                                <span class="value emphasis" id="ticket-productos-lista" style="text-align: right; font-size: 0.8rem; display: block; max-width: 180px;">Ninguno seleccionado</span>
                             </div>
                             <div class="detail-row">
-                                <span class="label">Cuota Inicial</span>
-                                <span class="value-badge">192.756.000 </span>
+                                <span class="label">Total Planes</span>
+                                <span class="value-badge" id="ticket-badge-total">$0</span>
                             </div>
                         </div>
                         <div class="ticket-total-zone">
-                            <p class="total-title">192.756.000 </p>
-                            <p class="total-amount">Tarifa</p>
+                            <p class="total-title" id="ticket-monto-total">$0</p>
+                            <p class="total-amount">Total a Pagar</p>
                         </div>
                     </div>
 
@@ -159,5 +188,46 @@
         </div>
     </div>
 
+    <script>
+        const checkboxes = document.querySelectorAll('.seguro-checkbox');
+        const ticketProductos = document.getElementById('ticket-productos-lista');
+        const ticketBadge = document.getElementById('ticket-badge-total');
+        const ticketMontoTotal = document.getElementById('ticket-monto-total');
+
+        function formatearMoneda(valor) {
+            return '$' + new Intl.NumberFormat('es-CO').format(valor);
+        }
+
+        function actualizarTicket() {
+            let total = 0;
+            let seleccionados = [];
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    total += parseFloat(checkbox.getAttribute('data-precio'));
+                    seleccionados.push(checkbox.getAttribute('data-nombre'));
+                }
+            });
+
+            if (seleccionados.length > 0) {
+                ticketProductos.innerHTML = seleccionados.join('<br>');
+                ticketBadge.textContent = formatearMoneda(total);
+                ticketMontoTotal.textContent = formatearMoneda(total);
+            } else {
+                ticketProductos.textContent = "Ninguno seleccionado";
+                ticketBadge.textContent = "$0";
+                ticketMontoTotal.textContent = "$0";
+            }
+        }
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', actualizarTicket);
+        });
+
+        // Ejecutar al cargar por si hay pre-seleccionados
+        actualizarTicket();
+    </script>
+
 </body>
 </html>
+
