@@ -63,4 +63,4 @@ Aquí puedes visualizar el diseño final de la interfaz:
 ## 🔗 Links del Proyecto
 
 * **Repositorio en GitHub:** [github.com/valentinab29/KidVault](https://github.com/valentinab29/KidVault)
-* **Despliegue en Vivo:** *[Añade aquí tu link de GitHub Pages o Vercel cuando lo subas]*
+* **Despliegue en Vivo:** https://valentinab29.github.io/KidVault/
