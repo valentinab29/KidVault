@@ -38,8 +38,9 @@ body {
 }
 
 .imagen-carrito {
-    width: 160px; 
+    width: 260px;       
     height: auto;
+    max-width: 100%;
     display: block;
-    transform: rotate(-2deg); 
+    transform: rotate(-2deg);
 }
