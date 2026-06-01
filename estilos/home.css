@@ -471,12 +471,6 @@
     width: auto;
 }
 
-.icono-regresar-carga {
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: bold;
-    font-size: 18px;
-}
-
 .contenido-carga h2 {
     font-size: 36px;
     font-weight: 800;
@@ -489,6 +483,13 @@
     position: relative;
     display: inline-block;
     margin-bottom: 25px;
+}
+
+.render-libreta {
+    max-height: 160px;
+    width: auto;
+    object-fit: contain;
+    animation: flotarSuave 3s ease-in-out infinite; 
 }
 
 .render-libros {
