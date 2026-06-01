@@ -102,7 +102,6 @@ body {
     display: block;
 }
 
-/* Ocultar el checkbox nativo */
 .product-card input[type="checkbox"] {
     display: none;
 }
@@ -139,12 +138,6 @@ body {
     line-height: 1.2;
 }
 
-.product-desc {
-    font-size: 0.75rem;
-    color: #718096;
-    line-height: 1.3;
-}
-
 .product-price {
     font-size: 1rem;
     font-weight: 800;
@@ -153,14 +146,12 @@ body {
     margin-top: 8px;
 }
 
-/* Estado seleccionado (Checked) */
 .product-card input[type="checkbox"]:checked + .product-card-content {
     border-color: #0281DD;
     background-color: rgba(2, 129, 221, 0.02);
     box-shadow: 0 8px 16px rgba(2, 129, 221, 0.12);
 }
 
-/* Icono flotante de check de confirmación */
 .product-card input[type="checkbox"]:checked + .product-card-content::after {
     content: '✓';
     position: absolute;
