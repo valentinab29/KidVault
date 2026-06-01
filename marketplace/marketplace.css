@@ -521,10 +521,6 @@ input[type="file"] {
     font-size: 0.85rem;
 }
 
-.detail-row .label {
-    color: #718096;
-}
-
 .detail-row .value.emphasis {
     color: #002b5c;
     font-weight: 700;
