@@ -122,9 +122,9 @@
                             </label>
                         </div>
                         <div class="method-tab-wrapper">
-                            <input type="radio" id="debito" name="metodo_pago" value="debito">
-                            <label for="debito" class="method-tab-label">
-                                <span class="tab-text-fallback">DÉBITO AUTO</span>
+                            <input type="radio" id="billeteras" name="metodo_pago" value="billeteras">
+                            <label for="billeteras" class="method-tab-label">
+                                <span class="tab-text-fallback">BILLETERAS DIGITALES</span>
                             </label>
                         </div>
                     </div>
@@ -143,6 +143,19 @@
 
                     <div class="campo">
                         <input type="text" id="titular" placeholder="Nombre del titular" required>
+                    </div>
+
+                    <div id="campos-billeteras" style="display: none;">
+                        <div class="campo">
+                            <select id="tipo-billetera">
+                                <option value="">Selecciona tu billetera digital</option>
+                                <option value="nequi">Nequi</option>
+                                <option value="daviplata">Daviplata</option>
+                            </select>
+                        </div>
+                        <div class="campo">
+                            <input type="text" id="celular-billetera" placeholder="Número de celular (10 dígitos)" maxlength="10">
+                        </div>
                     </div>
 
                     <div id="campos-tarjeta-fisica" style="display: none;">

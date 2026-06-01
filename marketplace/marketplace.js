@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectBanco = document.getElementById('banco');
     const camposTarjetaFisica = document.getElementById('campos-tarjeta-fisica');
     
+    // Elementos nuevos para Billeteras
+    const camposBilleteras = document.getElementById('campos-billeteras');
+    const selectBilletera = document.getElementById('tipo-billetera');
+    const inputCelular = document.getElementById('celular-billetera');
+    
     const ticketProductos = document.getElementById('ticket-productos-lista');
     const ticketBadgeTotal = document.getElementById('ticket-badge-total');
     const ticketMontoTotal = document.getElementById('ticket-monto-total');
@@ -21,9 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const MAX_TOTAL_PRODUCTOS = 6;
     const MAX_PRODUCTOS_MISMO_TIPO = 5;
 
-    // --- RESTRICCIONES DE RÚBRICA ---
     const MIN_LETRAS_TITULAR = 8;
-    const LONGITUD_TARJETA_CON_ESPACIOS = 19; // 16 números + 3 espacios
+    const LONGITUD_TARJETA_CON_ESPACIOS = 19; 
     const LONGITUD_CVV = 3;
 
     function formatPesos(numero) {
@@ -126,14 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // CONTROL EN TIEMPO REAL: Solo letras en el nombre del titular
     inputTitular.addEventListener('input', (e) => {
         let texto = e.target.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
         e.target.value = texto;
         displayTitular.textContent = texto.trim() === "" ? "Blanca García" : texto;
     });
 
-    // CONTROL EN TIEMPO REAL: Formateo de tarjeta cada 4 números
     if (inputTarjeta) {
         inputTarjeta.addEventListener('input', (e) => {
             let value = e.target.value.replace(/\D/g, '');
@@ -150,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // CONTROL EN TIEMPO REAL: Solo números en el CVV
     const inputCVV = document.getElementById('cvv');
     if (inputCVV) {
         inputCVV.addEventListener('input', (e) => {
@@ -158,48 +159,65 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // CONTROL EN TIEMPO REAL: Solo números en campos de fecha
-    const inputMM = document.getElementById('exp-mm');
-    const inputAA = document.getElementById('exp-aa');
-    [inputMM, inputAA].forEach(input => {
-        if (input) {
-            input.addEventListener('input', (e) => {
-                e.target.value = e.target.value.replace(/\D/g, '');
-            });
-        }
-    });
+    if (inputCelular) {
+        inputCelular.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '');
+            if (e.target.value.length >= 4) {
+                displayTarjetaDigits.textContent = e.target.value.slice(-4);
+            }
+        });
+    }
+
+    if (selectBilletera) {
+        selectBilletera.addEventListener('change', (e) => {
+            if (e.target.value !== "") {
+                displayCardBrand.textContent = e.target.value.toUpperCase();
+            } else {
+                displayCardBrand.textContent = "BILLETERA";
+            }
+        });
+    }
 
     radioMetodos.forEach(radio => {
         radio.addEventListener('change', (e) => {
             const metodo = e.target.value;
             displayCardBrand.textContent = metodo.toUpperCase();
             
+            contenedorBanco.style.display = 'none';
+            selectBanco.required = false;
+            camposBilleteras.style.display = 'none';
+            if (selectBilletera) selectBilletera.required = false;
+            if (inputCelular) inputCelular.required = false;
+            if (camposTarjetaFisica) camposTarjetaFisica.style.display = 'none';
+            establecerRequeridosTarjeta(false);
+            
             if (metodo === 'pse') {
                 contenedorBanco.style.display = 'block';
                 selectBanco.required = true;
-                camposTarjetaFisica.style.display = 'none';
-                establecerRequeridosTarjeta(false);
             } else if (metodo === 'visa' || metodo === 'mastercard') {
-                contenedorBanco.style.display = 'none';
-                selectBanco.required = false;
-                camposTarjetaFisica.style.block = 'block';
-                camposTarjetaFisica.style.display = 'block';
+                if (camposTarjetaFisica) {
+                    camposTarjetaFisica.style.display = 'block';
+                }
                 establecerRequeridosTarjeta(true);
-            } else if (metodo === 'debito') {
-                contenedorBanco.style.display = 'block';
-                selectBanco.required = true;
-                camposTarjetaFisica.style.display = 'none';
-                establecerRequeridosTarjeta(false);
+            } else if (metodo === 'billeteras') {
+                camposBilleteras.style.display = 'block';
+                if (selectBilletera) selectBilletera.required = true;
+                if (inputCelular) inputCelular.required = true;
+                displayCardBrand.textContent = selectBilletera && selectBilletera.value ? selectBilletera.value.toUpperCase() : "BILLETERA";
             }
         });
     });
 
     function establecerRequeridosTarjeta(requerido) {
-        if (inputTarjeta && inputCVV && inputMM && inputAA) {
-            inputTarjeta.required = requerido;
-            inputCVV.required = requerido;
-            inputMM.required = requerido;
-            inputAA.required = requerido;
+        const nTarjeta = document.getElementById('n-tarjeta');
+        const cvv = document.getElementById('cvv');
+        const mm = document.getElementById('exp-mm');
+        const aa = document.getElementById('exp-aa');
+        if (nTarjeta && cvv && mm && aa) {
+            nTarjeta.required = requerido;
+            cvv.required = requerido;
+            mm.required = requerido;
+            aa.required = requerido;
         }
     }
 
@@ -213,72 +231,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ==========================================================================
-    // VALIDACIÓN ESTRICTA DEL FORMULARIO (RÚBRICA DE ENTREGA)
-    // ==========================================================================
     form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
         let carritoActivo = false;
         checkboxes.forEach(cb => { if (cb.checked) carritoActivo = true; });
 
         if (!carritoActivo) {
-            e.preventDefault();
             alert('Error: Debes seleccionar al menos un plan de seguro antes de finalizar la compra.');
             return;
         }
 
-        // 1. Validar longitud mínima del titular
         if (inputTitular.value.trim().length < MIN_LETRAS_TITULAR) {
-            e.preventDefault();
             alert(`Error en Datos de Facturación: El nombre del titular es demasiado corto (Mínimo ${MIN_LETRAS_TITULAR} caracteres).`);
             inputTitular.focus();
             return;
         }
 
         const metodoSeleccionado = document.querySelector('input[name="metodo_pago"]:checked').value;
+        let detalleMetodo = "";
 
-        // 2. Validaciones si elige tarjeta de crédito (Visa / Mastercard)
-        if (metodoSeleccionado === 'visa' || metodoSeleccionado === 'mastercard') {
-            
-            if (inputTarjeta.value.length < LONGITUD_TARJETA_CON_ESPACIOS) {
-                e.preventDefault();
+        if (metodoSeleccionado === 'pse') {
+            if (selectBanco.value === "") {
+                alert('Error: Selecciona una entidad bancaria para continuar con el pago.');
+                selectBanco.focus();
+                return;
+            }
+            const nombreBanco = selectBanco.options[selectBanco.selectedIndex].text;
+            detalleMetodo = `vía PSE a través de ${nombreBanco}`;
+
+        } else if (metodoSeleccionado === 'billeteras') {
+            if (selectBilletera.value === "") {
+                alert('Error: Selecciona qué billetera digital vas a utilizar (Nequi o Daviplata).');
+                selectBilletera.focus();
+                return;
+            }
+            if (inputCelular.value.length < 10) {
+                alert('Error: El número de celular para la billetera digital debe tener exactamente 10 dígitos.');
+                inputCelular.focus();
+                return;
+            }
+            const billeteraElegida = selectBilletera.value === 'nequi' ? 'Nequi' : 'Daviplata';
+            detalleMetodo = `desde tu cuenta de ${billeteraElegida} (*${inputCelular.value.slice(-4)})`;
+
+        } else if (metodoSeleccionado === 'visa' || metodoSeleccionado === 'mastercard') {
+            const nTarjeta = document.getElementById('n-tarjeta');
+            const cvv = document.getElementById('cvv');
+            const mm = document.getElementById('exp-mm');
+            const aa = document.getElementById('exp-aa');
+
+            if (nTarjeta.value.length < LONGITUD_TARJETA_CON_ESPACIOS) {
                 alert('Error en Tarjeta: El número de tarjeta está incompleto. Debe tener exactamente 16 dígitos.');
-                inputTarjeta.focus();
+                nTarjeta.focus();
                 return;
             }
-
-            if (inputCVV.value.length < LONGITUD_CVV) {
-                e.preventDefault();
+            if (cvv.value.length < LONGITUD_CVV) {
                 alert('Error en Tarjeta: El código de seguridad CVV debe tener exactamente 3 dígitos.');
-                inputCVV.focus();
+                cvv.focus();
                 return;
             }
-
-            const mes = parseInt(inputMM.value, 10);
+            const mes = parseInt(mm.value, 10);
             if (isNaN(mes) || mes < 1 || mes > 12) {
-                e.preventDefault();
                 alert('Error en Tarjeta: El mes de expiración no es válido (Debe ser entre 01 y 12).');
-                inputMM.focus();
+                mm.focus();
                 return;
             }
-
-            if (inputAA.value.length < 2) {
-                e.preventDefault();
-                alert('Error en Tarjeta: El año de expiración debe tener 2 dígitos (ej: 27).');
-                inputAA.focus();
+            if (aa.value.length < 2) {
+                alert('Error en Tarjeta: El año de expiración debe tener 2 dígitos.');
+                aa.focus();
                 return;
             }
+            detalleMetodo = `con tu tarjeta ${metodoSeleccionado.toUpperCase()} terminada en *${nTarjeta.value.slice(-4)}`;
         }
 
-        // 3. Validar carga de documentación
         if (!inputFile.files || inputFile.files.length === 0) {
-            e.preventDefault();
-            alert(`¡Pago Realizado con Éxito! 🎉\n\n` +
-              `Tu transacción por valor de ${montoFinal} ha sido aprobada ${detalleMetodo}.\n` +
-              `Hemos recibido correctamente el documento adjunto: "${inputFile.files[0].name}".\n\n` +
-              `¡Gracias por asegurar el futuro educativo con KidVault y Global Seguros!`);
+            alert('Error: Es obligatorio adjuntar la documentación requerida para procesar el seguro.');
             return;
         }
 
-        alert('¡Validaciones correctas! Procesando su plan educativo en KidVault...');
+        const montoFinal = ticketMontoTotal.textContent;
+        
+        alert(`¡Pago Realizado con Éxito! 🎉\n\n` +
+              `Tu transacción por valor de ${montoFinal} ha sido aprobada ${detalleMetodo}.\n` +
+              `Hemos recibido correctamente el documento adjunto: "${inputFile.files[0].name}".\n\n` +
+              `¡Gracias por asegurar el futuro educativo con KidVault y Global Seguros!`);
     });
 });

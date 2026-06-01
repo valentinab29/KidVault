@@ -1,4 +1,7 @@
-function enviarFormulario() {
+function enviarFormulario(e) {
+    // CORRECCIÓN: Detiene la recarga automática del formulario por defecto
+    if (e) e.preventDefault();
+
     const nombre = document.getElementById('nombre').value.trim();
     const correo = document.getElementById('correo').value.trim();
     const celular = document.getElementById('celular').value.trim();
@@ -66,5 +69,14 @@ function enviarFormulario() {
 
     document.querySelector('form').reset();
 
+    // Ahora sí funcionará la redirección sin interferencias
     window.location.href = "loading.html";
 }
+
+// Vinculación correcta al evento 'submit' del formulario
+document.addEventListener('DOMContentLoaded', () => {
+    const formulario = document.querySelector('form');
+    if (formulario) {
+        formulario.addEventListener('submit', enviarFormulario);
+    }
+});

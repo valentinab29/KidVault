@@ -233,7 +233,7 @@ body {
 .ticket-container { width: 100%; max-width: 320px; display: flex; flex-direction: column; perspective: 2000px; }
 
 .credit-card-preview {
-    background: linear-gradient(135deg, #0281DD 0%, #002b5c 100%);
+    background: linear-gradient(135deg, #dd0202 0%, #5c1200 100%);
     border-radius: 20px;
     padding: 24px;
     color: white;

@@ -153,6 +153,7 @@
     max-width: 1100px;
     margin: 40px auto 0 auto;
     padding: 20px 0;
+    gap: 20px; 
 }
 
 .tarjeta-paso {
@@ -164,21 +165,19 @@
     width: 260px;
     min-height: 200px;
     text-align: left;
-    margin-left: -20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     cursor: pointer; 
     position: relative;
     z-index: 1;
-    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.tarjeta-paso.activa {
-    background: #0084FF;
-    transform: scale(1.05);
-    z-index: 5; 
-    margin-left: -20px; 
-    margin-right: -10px;
-    box-shadow: 0 15px 35px rgba(0, 132, 255, 0.4);
+
+.tarjeta-paso:hover {
+    background: #1877F2;
+    border-color: #1877F2; 
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 35px rgba(24, 119, 242, 0.4); 
 }
 
 .tarjeta-paso h4 { font-size: 22px; margin-bottom: 15px; }
