@@ -10,7 +10,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column; 
-    justify-content: flex-start; /* Permite controlar el bajado general con los márgenes del contenedor */
+    justify-content: flex-start;
     align-items: center;
     padding: 0 30px 40px 30px;
 }
@@ -20,52 +20,26 @@ body {
     max-width: 1050px;
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Espacio elegante entre la barra superior y la tarjeta blanca */
-    margin-top: 40px; /* CORRECCIÓN: Baja todo el bloque general de la pantalla */
+    gap: 25px;
+    margin-top: 40px;
 }
 
-/* ==========================================================================
-   ESTILOS DE LA BARRA SUPERIOR (LOGO GLOBAL SEGUROS & BOTÓN VOLVER)
-   ========================================================================== */
 .global-top-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 15px; /* Un poco más de aire en los bordes internos */
+    padding: 0 15px;
 }
 
 .global-brand-logo {
-    height: 34px; /* Un toque de tamaño extra para mejor legibilidad */
+    height: 34px;
     width: auto;
     object-fit: contain;
     display: block;
 }
 
-.btn-back-nav {
-    text-decoration: none;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.2s ease;
-}
 
-.btn-back-nav:hover {
-    transform: translateX(-5px); 
-}
-
-.nav-arrow-icons {
-    color: #ffffff; 
-    font-family: Arial, sans-serif; /* Forzar tipografía geométrica para las flechas */
-    font-size: 2.6rem; /* CORRECCIÓN: Flechas notablemente más grandes y visibles */
-    font-weight: 800; /* Super gruesas */
-    letter-spacing: -4px; /* Junta las dos puntas de flecha adecuadamente */
-    line-height: 1;
-}
-
-/* ==========================================================================
-   TARJETA PRINCIPAL Y DIVISIONES
-   ========================================================================== */
 .main-payment-card {
     background-color: #f5f7fa;
     border-radius: 32px;
@@ -114,9 +88,97 @@ body {
     margin-bottom: 20px;
 }
 
-/* ==========================================================================
-   PASARELAS DE PAGO Y SISTEMA DE INDICADORES EN PESTAÑAS
-   ========================================================================== */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.product-card {
+    position: relative;
+    cursor: pointer;
+    display: block;
+}
+
+/* Ocultar el checkbox nativo */
+.product-card input[type="checkbox"] {
+    display: none;
+}
+
+.product-card-content {
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 120px;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.product-card:hover .product-card-content {
+    border-color: #cbd5e0;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.product-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1.2;
+}
+
+.product-desc {
+    font-size: 0.75rem;
+    color: #718096;
+    line-height: 1.3;
+}
+
+.product-price {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #0281DD;
+    align-self: flex-start;
+    margin-top: 8px;
+}
+
+/* Estado seleccionado (Checked) */
+.product-card input[type="checkbox"]:checked + .product-card-content {
+    border-color: #0281DD;
+    background-color: rgba(2, 129, 221, 0.02);
+    box-shadow: 0 8px 16px rgba(2, 129, 221, 0.12);
+}
+
+/* Icono flotante de check de confirmación */
+.product-card input[type="checkbox"]:checked + .product-card-content::after {
+    content: '✓';
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #0281DD;
+    color: white;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(2, 129, 221, 0.4);
+}
+
 .payment-methods-tabs {
     display: flex;
     gap: 12px;
@@ -159,7 +221,6 @@ body {
     box-shadow: 0 4px 12px rgba(2, 129, 221, 0.2);
 }
 
-/* Pequeña flecha activa que apunta hacia abajo */
 .method-tab-wrapper input[type="radio"]:checked + .method-tab-label::after {
     content: '';
     position: absolute;
@@ -207,12 +268,10 @@ body {
     color: #718096;
 }
 
-/* ========================================================================== */
-
-/* INPUTS, CAMPOS Y SELECCIONABLES */
 .section-hint {
     color: #4a5568;
     font-size: 0.85rem;
+    margin-top: 15px;
     margin-bottom: 10px;
     font-weight: 600;
 }
@@ -242,11 +301,6 @@ body {
     background-size: 16px;
     padding-right: 45px;
     cursor: pointer;
-}
-
-.campo select option {
-    background-color: #ffffff;
-    color: #2d3748;
 }
 
 .row-inputs {
@@ -279,7 +333,6 @@ body {
     font-weight: bold;
 }
 
-/* SUBIDA DE ARCHIVOS ADJUNTOS */
 .document-upload-section {
     margin-top: 20px;
 }
@@ -339,9 +392,6 @@ input[type="file"] {
     background-color: #000366;
 }
 
-/* ==========================================================================
-   PREVISUALIZACIÓN DE TICKET DE PAGO E INTERACCIÓN 3D
-   ========================================================================== */
 .ticket-container {
     width: 100%;
     max-width: 320px;
@@ -356,18 +406,16 @@ input[type="file"] {
     border-radius: 20px;
     padding: 24px;
     color: white;
-    box-shadow: 0 15px 35px rgba(194, 47, 81, 0.3);
+    box-shadow: 0 15px 35px rgba(194, 47, 81, 0.25);
     aspect-ratio: 1.58 / 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     z-index: 5;
-    transform: translateY(20px) rotateX(0deg) rotateY(0deg) translateZ(0px); 
     transform-style: preserve-3d;
     overflow: hidden; 
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s ease;
+    animation: balanceoCard3D 7s ease-in-out infinite;
 }
-
 .credit-card-preview::before {
     content: '';
     position: absolute;
@@ -378,29 +426,52 @@ input[type="file"] {
     background: linear-gradient(
         115deg,
         rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.01) 30%,
-        rgba(255, 255, 255, 0.38) 50%,
-        rgba(255, 255, 255, 0.01) 70%,
+        rgba(255, 255, 255, 0.02) 30%,
+        rgba(255, 255, 255, 0.32) 50%,
+        rgba(255, 255, 255, 0.02) 70%,
         rgba(255, 255, 255, 0) 100%
     );
-    transform: translate(0, 0);
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     pointer-events: none;
     z-index: 1;
+    animation: brilloSatinadoInfinito 5s ease-in-out infinite;
 }
 
-.ticket-container:hover .credit-card-preview {
-    transform: translateY(8px) rotateX(14deg) rotateY(-12deg) translateZ(30px);
-    box-shadow: -15px 30px 45px rgba(194, 47, 81, 0.45);
-}
-
-.ticket-container:hover .credit-card-preview::before {
-    transform: translate(40%, 40%);
-}
 
 .credit-card-preview > * {
-    transform: translateZ(40px);
+    transform: translateZ(45px);
     transform-style: preserve-3d;
+}
+
+@keyframes balanceoCard3D {
+    0% {
+        transform: translateY(20px) rotateX(10deg) rotateY(-8deg) translateZ(0px);
+        box-shadow: -10px 20px 40px rgba(194, 47, 81, 0.3);
+    }
+    25% {
+        transform: translateY(12px) rotateX(14deg) rotateY(6deg) translateZ(15px);
+        box-shadow: 10px 25px 45px rgba(194, 47, 81, 0.35);
+    }
+    50% {
+        transform: translateY(20px) rotateX(6deg) rotateY(12deg) translateZ(0px);
+        box-shadow: 12px 18px 35px rgba(194, 47, 81, 0.28);
+    }
+    75% {
+        transform: translateY(25px) rotateX(12deg) rotateY(-6deg) translateZ(10px);
+        box-shadow: -8px 22px 40px rgba(194, 47, 81, 0.32);
+    }
+    100% {
+        transform: translateY(20px) rotateX(10deg) rotateY(-8deg) translateZ(0px);
+        box-shadow: -10px 20px 40px rgba(194, 47, 81, 0.3);
+    }
+}
+
+@keyframes brilloSatinadoInfinito {
+    0% {
+        transform: translate(-30%, -30%);
+    }
+    40%, 100% {
+        transform: translate(35%, 35%); 
+    }
 }
 
 .card-top {
@@ -497,7 +568,6 @@ input[type="file"] {
     margin-top: 2px;
 }
 
-/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .split-container-payment {
         margin-top: 20px;
