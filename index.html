@@ -18,7 +18,7 @@
         
         <nav class="botones-navegacion">
             <a href="Contacto_Forms/forms.html" class="enlace-texto">Ayuda</a>
-            <a href="boveda.html" class="boton-primario-lineas">Mi Bóveda</a>
+            <a href="Carro.carga/carga_carro.html" class="boton-primario-lineas">Mi Bóveda</a>
         </nav>
     </header>
 
@@ -79,23 +79,38 @@
 
     <section class="seccion-testimonios">
         <h2>Testimonios</h2>
+        
         <div class="contenedor-carrusel">
             <button class="boton-flecha anterior" aria-label="Testimonio anterior">&#10094;&#10094;</button>
             
             <div class="rejilla-testimonios">
-                <div class="tarjeta-testimonio">
-                    <span class="etiqueta-cliente">Cliente Antiguo</span>
-                    <img src="Multimedia/Alberto-Hernandez.jpg" alt="Foto del cliente Alberto Hernández" class="imagen-usuario">
-                    <h4>Alberto Hernandez</h4>
-                    <p>“Lo que más tranquilidad me dio no fue solo ahorrar, sino sentir que podía adaptarme si las cosas cambiaban.”</p>
-                </div>
                 
-                <div class="tarjeta-testimonio">
+                <article class="tarjeta-testimonio">
+                    <span class="etiqueta-cliente">Cliente Antiguo</span>
+                    <div class="contenedor-foto-usuario">
+                        <img src="Multimedia/Alberto-Hernandez.jpg" alt="Foto del cliente Alberto Hernández" class="imagen-usuario">
+                    </div>
+                    <div class="bloque-contenido-testimonio">
+                        <h4>Alberto Hernandez</h4>
+                        <blockquote>
+                            “Lo que más tranquilidad me dio no fue solo ahorrar, sino sentir que podía adaptarme si las cosas cambiaban.”
+                        </blockquote>
+                    </div>
+                </article>
+                
+                <article class="tarjeta-testimonio">
                     <span class="etiqueta-cliente">Cliente Reciente</span>
-                    <img src="Multimedia/Adriana-Franco.jpg" alt="Foto de la cliente Adriana Franco" class="imagen-usuario">
-                    <h4>Adriana Franco</h4>
-                    <p>“Sentí tranquilidad al saber que podía seguir construyendo el futuro de mi hijo sin sentirme atrapado en el proceso.”</p>
-                </div>
+                    <div class="contenedor-foto-usuario">
+                        <img src="Multimedia/Adriana-Franco.jpg" alt="Foto de la cliente Adriana Franco" class="imagen-usuario">
+                    </div>
+                    <div class="bloque-contenido-testimonio">
+                        <h4>Adriana Franco</h4>
+                        <blockquote>
+                            “Sentí tranquilidad al saber que podía seguir construyendo el futuro de mi hijo sin sentirme atrapado en el proceso.”
+                        </blockquote>
+                    </div>
+                </article>
+
             </div>
 
             <button class="boton-flecha siguiente" aria-label="Siguiente testimonio">&#10095;&#10095;</button>
@@ -121,7 +136,7 @@
                     <p><strong>servicioalcliente@globalseguros.co</strong> 📩</p>
                     <p><strong>(601) 744 0084</strong> 🤳🏻</p>
                 </div>
-                <a href="#" class="boton-blanco">Agenda tu cita</a>
+                <a href="Contacto_Forms/forms.html" class="boton-blanco">Agenda tu cita</a>
             </div>
         </div>
     </section>
@@ -159,7 +174,5 @@
             </div>
         </div>
     </footer>
-
-    <script src="scripts/main.js"></script>
 </body>
 </html>
