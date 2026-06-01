@@ -1,4 +1,4 @@
-const urlDestino = '/boveda.html'; 
+const urlDestino ="../boveda.html"
 const tiempoEspera = 4000; 
 
 setTimeout(() => {
