@@ -1,4 +1,4 @@
-@import url("marca.css");
+/* === PAGINA PRINCIPAL (HOME) === */
 
 .barra-navegacion {
     display: flex;
@@ -6,6 +6,7 @@
     align-items: center;
     padding: 20px 5%;
 }
+
 .logo img {
     height: 50px;        
     width: 200px;
@@ -71,6 +72,7 @@
     font-size: 13px;
     opacity: 0.8;
 }
+
 .imagen-principal {
     flex: 1;
     display: flex;
@@ -89,6 +91,8 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
 }
+
+/* === SECCIÓN RECORRIDO === */
 
 .seccion-recorrido {
     padding: 80px 10%;
@@ -127,6 +131,7 @@
     line-height: 1.6;
     font-size: 16px;
 }
+
 .imagen-tabla-3d {
     flex: 1;
     display: flex;
@@ -179,12 +184,10 @@
 .tarjeta-paso h4 { font-size: 22px; margin-bottom: 15px; }
 .tarjeta-paso p { font-size: 14px; opacity: 0.9; line-height: 1.4; }
 
-.seccion-testimonios {
-    padding: 80px 5%;
-}
+/* === SECCIÓN TESTIMONIOS === */
 
 .seccion-testimonios {
-    padding: 80px 5%;
+    padding: 80px 5%; 
     color: #ffffff;
     text-align: center;
     box-sizing: border-box;
@@ -212,6 +215,11 @@
     font-size: 24px;
     cursor: pointer;
     opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.boton-flecha:hover {
+    opacity: 1;
 }
 
 .rejilla-testimonios {
@@ -223,14 +231,12 @@
     width: 900px; 
 }
 
-
 .grupo-testimonios {
     display: none;
     opacity: 0;
     gap: 30px;
     transition: opacity 0.5s ease-in-out;
 }
-
 
 .grupo-testimonios.activo {
     display: flex;
@@ -242,28 +248,17 @@
     background: rgba(255, 255, 255, 0.07);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 25px;
-    padding: 40px 30px 30px 30px;
+    padding: 35px 30px;
     position: relative;
     backdrop-filter: blur(5px);
-    width: 400px; 
+    -webkit-backdrop-filter: blur(5px);
+    width: 400px;
     box-sizing: border-box;
-    text-align: center; 
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-.etiqueta-cliente {
-    position: absolute;
-    top: -15px;
-    left: 30px;
-    background: #3a536e;
-    padding: 6px 16px;
-    border-radius: 15px;
-    font-size: 15px;
-    font-weight: bold;
-}
-
 
 .imagen-usuario {
     width: 130px;      
@@ -293,6 +288,7 @@
     margin-top: 40px; 
 }
 
+/* === SECCIÓN CONTACTO === */
 
 .seccion-contacto {
     padding: 100px 10%;
@@ -339,6 +335,8 @@
     margin-bottom: 15px;
 }
 
+/* === PIE DE PÁGINA (FOOTER) === */
+
 .pie-pagina {
     background: #07162c;
     padding: 60px 5% 40px 5%;
@@ -374,6 +372,38 @@
     font-size: 18px;
 }
 
+.iconos-sociales button {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.iconos-sociales img,
+.iconos-sociales i {
+    font-size: 35px; 
+}
+
+.iconos-sociales .fa-instagram {
+    color: #E1306C;
+}
+
+.iconos-sociales .fa-linkedin {
+    color: #0077B5;
+}
+
+.iconos-sociales .fa-facebook {
+    color: #1877F2;
+}
+
+.iconos-sociales .fa-youtube {
+    color: #FF0000;
+}
+
+/* === RESPONSIVE MEDIA QUERIES === */
+
 @media (max-width: 968px) {
     .seccion-principal { flex-direction: column; text-align: center; padding-top: 40px; }
     .contenido-principal h1 { font-size: 50px; }
@@ -386,20 +416,19 @@
 }
 
 
-
+/* === COMPONENTES PANTALLA DE CARGA === */
 
 :root {
-    --azul-oscuro-fondo: #0a2540; /* Color principal de tu marca */
+    --azul-oscuro-fondo: #0a2540; 
     --celeste-kidvault: #5cc2f2;
 }
 
-/* Forzamos que el body de esta página ocupe todo el espacio y tenga tu fondo */
 .body-pantalla-carga {
     margin: 0;
     padding: 0;
     background-color: var(--azul-oscuro-fondo);
     min-height: 100vh;
-    font-family: Arial, sans-serif; /* O la tipografía que cargues de Google Fonts */
+    font-family: Arial, sans-serif; 
     overflow-x: hidden;
 }
 
@@ -414,7 +443,6 @@
     box-sizing: border-box;
 }
 
-/* Contenedor central con efecto vidrio esmerilado (Glassmorphism) */
 .contenedor-carga-cristal {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.15);
@@ -431,7 +459,6 @@
     z-index: 5;
 }
 
-/* Encabezado interno de la tarjeta */
 .encabezado-carga {
     display: flex;
     justify-content: space-between;
@@ -440,7 +467,7 @@
 }
 
 .logo-carga img {
-    height: 35px; /* Ajusta según el tamaño de tu logo */
+    height: 35px;
     width: auto;
 }
 
@@ -450,7 +477,6 @@
     font-size: 18px;
 }
 
-/* Contenido Principal */
 .contenido-carga h2 {
     font-size: 36px;
     font-weight: 800;
@@ -469,10 +495,9 @@
     max-height: 160px;
     width: auto;
     object-fit: contain;
-    animation: flotarSuave 3s ease-in-out infinite; /* Movimiento fluido 3D */
+    animation: flotarSuave 3s ease-in-out infinite; 
 }
 
-/* Barra de progreso de 5 segundos */
 .barra-progreso-contenedor {
     width: 140px;
     height: 4px;
@@ -487,7 +512,7 @@
     height: 100%;
     background: var(--celeste-kidvault);
     border-radius: 2px;
-    animation: cargarProgresoPagina 5s linear forwards; /* Se ejecuta inmediatamente al cargar */
+    animation: cargarProgresoPagina 5s linear forwards; 
 }
 
 .texto-informativo-carga {
@@ -498,7 +523,6 @@
     opacity: 0.85;
 }
 
-/* Pie de página de la tarjeta */
 .pie-carga {
     margin-top: 35px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -513,7 +537,6 @@
     font-weight: 600;
 }
 
-/* Ilustración del personaje adaptada a la esquina inferior izquierda */
 .personaje-flotante-carga {
     position: absolute;
     bottom: 0;
@@ -524,7 +547,6 @@
     pointer-events: none;
 }
 
-/* --- ANIMACIONES NATIVAS (CSS3) --- */
 @keyframes flotarSuave {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
@@ -534,26 +556,14 @@
     to { width: 100%; }
 }
 
-/* Responsive Obligatorio de la Rúbrica (< 480px) */
 @media (max-width: 480px) {
-    .contenedor-carga-cristal {
-        padding: 25px;
-        border-radius: 25px;
-    }
-    .contenido-carga h2 {
-        font-size: 26px;
-    }
-    .personaje-flotante-carga {
-        display: none; /* Se oculta para no pisar el contenido en pantallas muy pequeñas */
-    }
+    .contenedor-carga-cristal { padding: 25px; border-radius: 25px; }
+    .contenido-carga h2 { font-size: 26px; }
+    .personaje-flotante-carga { display: none; }
 }
 
 
-
-
-/* ==========================================================================
-   ESTILOS COMPONENTES DASHBOARD / PLATAFORMA DE USUARIO (DASHBOARD.HTML)
-   ========================================================================== */
+/* === COMPONENTES DASHBOARD / PLATAFORMA DE USUARIO === */
 
 .body-dashboard {
     margin: 0 !important;
@@ -573,7 +583,6 @@
     background-color: #f4f7f6;
 }
 
-/* --- BARRA LATERAL (ASIDE DE ADORNO) --- */
 .barra-lateral {
     width: 280px;
     min-width: 280px;
@@ -663,7 +672,6 @@
     padding-left: 15px;
 }
 
-/* Items del menú estáticos (Sin cursor pointer) */
 .item-menu-estatico {
     display: flex;
     align-items: center;
@@ -688,7 +696,6 @@
     padding-top: 20px;
 }
 
-/* Botón Salir Real */
 .boton-salir-real {
     display: block;
     width: 100%;
@@ -710,7 +717,6 @@
     border-color: #e63946;
 }
 
-/* --- ZONA DE TRABAJO DERECHA (MAIN) --- */
 .contenido-plataforma {
     flex: 1;
     padding: 40px;
@@ -751,14 +757,12 @@
     user-select: none;
 }
 
-/* GRID PRINCIPAL */
 .grilla-dashboard {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
 }
 
-/* Tarjeta 1: Progreso */
 .tarjeta-banner-azul {
     grid-column: 1 / -1;
     background: linear-gradient(90deg, #1d63ed 0%, #1742c4 100%);
@@ -808,7 +812,6 @@
     border-radius: 10px;
 }
 
-/* Tarjeta 2: Próximo Aporte (Coral) */
 .tarjeta-aporte-coral {
     background-color: #d9546a;
     border-radius: 30px;
@@ -850,7 +853,6 @@
     gap: 12px;
 }
 
-/* Único Botón con Click Real e interacción */
 .boton-pago-real {
     background: #ffffff;
     color: #d9546a;
@@ -868,7 +870,6 @@
     transform: scale(1.04);
 }
 
-/* Adorno estático de Pausar */
 .boton-pago-decorativo {
     background: transparent;
     color: rgba(255, 255, 255, 0.8);
@@ -881,7 +882,6 @@
     user-select: none;
 }
 
-/* Tarjeta 3: Opciones Futuras (Arena) */
 .tarjeta-opciones-arena {
     background-color: #cbd0c0;
     border-radius: 30px;
@@ -907,7 +907,6 @@
     gap: 10px;
 }
 
-/* Modificado a bloques de adorno de texto */
 .tag-futuro-decorativo {
     background-color: #ffffff;
     color: #2b2b2b;
@@ -926,7 +925,6 @@
     object-fit: contain;
 }
 
-/* Footer institucional integrado */
 .pie-plataforma-contacto {
     margin-top: auto;
     border-top: 1px solid #e2e8f0;
@@ -939,7 +937,6 @@
     color: #2d3748;
 }
 
-/* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 768px) {
     .contenedor-plataforma { flex-direction: column; }
     .barra-lateral { width: 100%; min-width: 100%; }
