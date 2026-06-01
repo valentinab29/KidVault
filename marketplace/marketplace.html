@@ -20,8 +20,8 @@
             
             <div class="payment-left-side">
                 <div class="payment-header">
-                    <h2><span class="icon-wallet">💳</span> Pasarela de Pago</h2>
-                    <h3>Construyamos su portafolio educativo.</h3>
+                    <h2><span class="icon-wallet">💳</span> Medio de Pago</h2>
+                    <h3>Construyamos su futueo educativo.</h3>
                     <p class="subtitle">Selecciona uno o varios seguros para añadir a tu plan y asegurar el futuro de tus hijos.</p>
                 </div>
 
@@ -187,47 +187,6 @@
 
         </div>
     </div>
-
-    <script>
-        const checkboxes = document.querySelectorAll('.seguro-checkbox');
-        const ticketProductos = document.getElementById('ticket-productos-lista');
-        const ticketBadge = document.getElementById('ticket-badge-total');
-        const ticketMontoTotal = document.getElementById('ticket-monto-total');
-
-        function formatearMoneda(valor) {
-            return '$' + new Intl.NumberFormat('es-CO').format(valor);
-        }
-
-        function actualizarTicket() {
-            let total = 0;
-            let seleccionados = [];
-
-            checkboxes.forEach(checkbox => {
-                if (checkbox.checked) {
-                    total += parseFloat(checkbox.getAttribute('data-precio'));
-                    seleccionados.push(checkbox.getAttribute('data-nombre'));
-                }
-            });
-
-            if (seleccionados.length > 0) {
-                ticketProductos.innerHTML = seleccionados.join('<br>');
-                ticketBadge.textContent = formatearMoneda(total);
-                ticketMontoTotal.textContent = formatearMoneda(total);
-            } else {
-                ticketProductos.textContent = "Ninguno seleccionado";
-                ticketBadge.textContent = "$0";
-                ticketMontoTotal.textContent = "$0";
-            }
-        }
-
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', actualizarTicket);
-        });
-
-        // Ejecutar al cargar por si hay pre-seleccionados
-        actualizarTicket();
-    </script>
-
 </body>
 </html>
 
