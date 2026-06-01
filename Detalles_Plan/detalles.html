@@ -134,19 +134,19 @@
 
                 <form id="contactForm" action="loading.html">
                     <div class="campo-dark">
-                        <input type="text" id="nombre" placeholder="Nombres y Apellidos" required>
+                        <input type="text" id="nombre" placeholder="Nombres y Apellidos" minlength="3" maxlength="50" required>
                     </div>
 
                     <div class="campo-dark">
-                        <input type="email" id="correo" placeholder="Correo Electrónico" required>
+                        <input type="email" id="correo" placeholder="Correo Electrónico" maxlength="100" required>
                     </div>
 
                     <div class="campo-dark">
-                        <input type="text" id="celular" placeholder="Número de Celular" required>
+                        <input type="text" id="celular" placeholder="Número de Celular" minlength="10" maxlength="10" required>
                     </div>
 
                     <div class="campo-dark">
-                        <input type="text" id="cedula" placeholder="Cédula" required>
+                        <input type="text" id="cedula" placeholder="Cédula" minlength="7" maxlength="10" required>
                     </div>
 
                     <div class="campo-dark">
@@ -202,6 +202,7 @@
         </div>
 
     </div>
+
 <script src="detalles.js"></script>
 </body>
 </html>

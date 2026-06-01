@@ -211,7 +211,7 @@ body {
     position: absolute;
     bottom: -12px;
     left: -10px;
-    max-width: 200px;           
+    max-width: 200px;          
     height: auto;
     z-index: 1;
     pointer-events: none;
@@ -263,6 +263,7 @@ body {
 .campo-dark input,
 .campo-dark select,
 .campo-dark textarea {
+    font-family: 'Open Sans', sans-serif; /* Asegura la misma fuente para inputs */
     width: 100%;
     padding: 12px 20px;
     background: rgba(255, 255, 255, 0.15) !important; 
@@ -307,7 +308,9 @@ body {
     background-color: #ffffff !important;
 }
 
-.btn-submit-blue {
+/* CORRECCIÓN: Nombre de clase alineado exactamente con la clase de tu HTML (.btn-submit) */
+.btn-submit {
+    font-family: 'Open Sans', sans-serif;
     width: 100%;
     padding: 14px;
     background-color: #0080ff; 
@@ -323,7 +326,7 @@ body {
     animation: pulsoBoton 2.5s infinite;
 }
 
-.btn-submit-blue:hover {
+.btn-submit:hover {
     background-color: #0066cc;
     box-shadow: 0 6px 20px rgba(0, 128, 255, 0.6);
     transform: scale(1.02);     
@@ -336,18 +339,6 @@ body {
     }
     50% {
         box-shadow: 0 4px 25px rgba(0, 128, 255, 0.7);
-    }
-    100% {
-        box-shadow: 0 4px 12px rgba(0, 128, 255, 0.3);
-    }
-}
-
-@keyframes pulsoBoton {
-    0% {
-        box-shadow: 0 4px 12px rgba(0, 128, 255, 0.3);
-    }
-    50% {
-        box-shadow: 0 4px 25px rgba(0, 128, 255, 0.7); 
     }
     100% {
         box-shadow: 0 4px 12px rgba(0, 128, 255, 0.3);
