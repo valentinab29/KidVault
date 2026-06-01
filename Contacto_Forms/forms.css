@@ -45,26 +45,6 @@ body {
     display: block;
 }
 
-.button-regresar {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease, opacity 0.3s ease; 
-    cursor: pointer;
-}
-
-.flechas-img {
-    max-width: 24px;  
-    height: auto;
-    opacity: 0.85; 
-    display: block;
-}
-
-.button-regresar:hover {
-    opacity: 1;         
-    transform: translateX(-5px); 
-}
-
 .visual-content {
     flex-grow: 1;
     display: flex;
